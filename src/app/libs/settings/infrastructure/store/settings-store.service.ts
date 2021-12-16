@@ -16,4 +16,10 @@ export class SettingsStoreService implements SettingsDataPort {
   writeAction(action: string): void {
     this.settingsState$.next({ history: [...this.settingsState$.getValue().history, action] });
   }
+
+  clearHistory(): void {
+    console.log('clear')
+    this.settingsState$.next(this.initialState);
+
+  }
 }

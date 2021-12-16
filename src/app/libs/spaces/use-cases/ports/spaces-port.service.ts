@@ -5,4 +5,6 @@ import { Observable } from 'rxjs';
 export abstract class SpacesPort {
   abstract getState(): Observable<boolean>;
   abstract setState(state: boolean): void;
+  abstract triggerClearAction(): void
+  abstract clearActionHistory$: Observable<void>;
 }
