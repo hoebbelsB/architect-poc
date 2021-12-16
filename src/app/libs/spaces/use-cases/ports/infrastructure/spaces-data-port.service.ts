@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export abstract class FeatureTwoDataPort {
+export abstract class SpacesDataPort {
   abstract toggleState(): void;
 }

@@ -4,6 +4,6 @@ import { SettingsStateModel } from '../../../domain';
 
 @Injectable()
 export abstract class SettingsDataPort {
-  abstract toggleState(): void;
+  abstract writeAction(action: string): void;
   abstract settingsState$: Observable<SettingsStateModel>;
 }

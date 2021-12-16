@@ -1,30 +1,30 @@
 import {
-  FeatureOneUiPort,
-  FeatureOneUseCase,
+  HandleActionUiPort,
+  HandleActionUseCase,
   FeatureTwoUiPort,
   FeatureTwoUseCase,
 } from '../use-cases';
-import { FeatureOneDataPort } from '../use-cases/ports/infrastructure/feature-one-data.port';
-import { FeatureTwoDataPort } from '../use-cases/ports/infrastructure/feature-two-data.port';
-import { FeatureOneStoreService } from './store/feature-one-store.service';
-import { FeatureTwoStoreService } from './store/feature-two-store.service';
+import { SettingsDataPort } from '../use-cases/ports/infrastructure/settings-data-port.service';
+import { SpacesDataPort } from '../use-cases/ports/infrastructure/spaces-data-port.service';
+import { SettingsStoreService } from './store/settings-store.service';
+import {SpacesStoreService} from "./store/spaces-store.service";
 
 export const INFRASTRUCTURE_PROVIDERS = [
   {
-    provide: FeatureOneDataPort,
-    useExisting: FeatureOneStoreService,
+    provide: SettingsDataPort,
+    useExisting: SettingsStoreService,
   },
   {
-    provide: FeatureTwoDataPort,
-    useExisting: FeatureTwoStoreService,
+    provide: SpacesDataPort,
+    useExisting: SpacesStoreService,
   },
 ];
 
 export const APPLICATION_PROVIDERS = [
   { provide: FeatureTwoUiPort, useExisting: FeatureTwoUseCase },
   {
-    provide: FeatureOneUiPort,
-    useExisting: FeatureOneUseCase,
-    deps: [FeatureOneDataPort, FeatureTwoDataPort],
+    provide: HandleActionUiPort,
+    useExisting: HandleActionUseCase,
+    deps: [SettingsDataPort, SpacesDataPort],
   },
 ];

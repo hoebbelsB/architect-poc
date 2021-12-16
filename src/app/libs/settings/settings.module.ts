@@ -7,13 +7,11 @@ import { UiModule, UI_PROVIDERS } from './ui';
 
 @NgModule({
   exports: [UiModule],
-  // check if we need this
-  imports: [UiModule],
 })
-export class FeatureOneModule {
-  static forRoot(): ModuleWithProviders<FeatureOneModule> {
+export class SettingsModule {
+  static forRoot(): ModuleWithProviders<SettingsModule> {
     return {
-      ngModule: FeatureOneModule,
+      ngModule: SettingsModule,
       providers: [
         ...INFRASTRUCTURE_PROVIDERS,
         ...APPLICATION_PROVIDERS,

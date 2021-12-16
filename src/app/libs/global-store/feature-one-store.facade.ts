@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { FeatureOnePort } from '../spaces/ui';
+import { SpacesPort } from '../spaces/ui';
 
 @Injectable({ providedIn: 'root' })
 export class FeatureOneStoreFacade {
-  constructor(private readonly featureOnePort: FeatureOnePort) {}
+  constructor(private readonly featureOnePort: SpacesPort) {}
 
   toggleState(): void {
     this.featureOnePort.setState(true);

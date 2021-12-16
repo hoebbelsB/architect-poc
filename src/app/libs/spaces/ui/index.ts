@@ -1,3 +1,3 @@
 export * from './tokens';
 export * from './ui.module';
-export * from '../use-cases/ports/feature-one.port';
+export * from '../use-cases/ports/spaces-port.service';

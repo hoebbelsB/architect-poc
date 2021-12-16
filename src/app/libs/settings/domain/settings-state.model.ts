@@ -1,3 +1,3 @@
 export interface SettingsStateModel {
-  isFeatureTwoTrue: boolean;
+  history: string[];
 }

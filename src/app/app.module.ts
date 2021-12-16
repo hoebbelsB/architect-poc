@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { FeatureOneModule } from './libs/spaces/feature-one.module';
-import { SettingsFeatureModule } from './libs/settings/feature-two.module';
+import { SpacesModule } from './libs/spaces/spaces.module';
+import { SettingsModule } from './libs/settings/settings.module';
 
 @NgModule({
   declarations: [
@@ -11,8 +11,8 @@ import { SettingsFeatureModule } from './libs/settings/feature-two.module';
   ],
   imports: [
     BrowserModule,
-    FeatureOneModule.forRoot(),
-    SettingsFeatureModule.forRoot(),
+    SpacesModule.forRoot(),
+    SettingsModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

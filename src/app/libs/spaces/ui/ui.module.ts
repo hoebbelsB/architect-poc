@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { FeatureOneComponent } from './components/feature-one.component';
+import { SpacesComponent } from './components/spaces.component';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
-  exports: [FeatureOneComponent],
+  exports: [SpacesComponent],
   imports: [CommonModule],
-  declarations: [FeatureOneComponent],
+  declarations: [SpacesComponent],
 })
 export class UiModule {}

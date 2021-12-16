@@ -1,6 +1,6 @@
-import { FeatureOnePort } from '../use-cases/ports/feature-one.port';
-import { FeatureOneOutputState } from './output-state/feature-one-output.state';
+import { SpacesPort } from '../use-cases/ports/spaces-port.service';
+import { SpacesOutputState } from './output-state/spaces-output-state.service';
 
 export const UI_PROVIDERS = [
-  { provide: FeatureOnePort, useExisting: FeatureOneOutputState },
+  { provide: SpacesPort, useExisting: SpacesOutputState },
 ];

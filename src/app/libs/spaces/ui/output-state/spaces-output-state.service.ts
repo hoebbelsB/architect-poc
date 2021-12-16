@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { FeatureOnePort } from '../../use-cases/ports/feature-one.port';
+import { SpacesPort } from '../../use-cases/ports/spaces-port.service';
 
 @Injectable({ providedIn: 'root' })
-export class FeatureOneOutputState implements FeatureOnePort {
-  private readonly state$: Subject<boolean>;
+export class SpacesOutputState implements SpacesPort {
+  private readonly state$ = new Subject<boolean>();
 
   setState(state: boolean): void {
     this.state$.next(state);
   }
 
   getState(): Observable<boolean> {
-    return this.state$;
+    return this.state$.asObservable();
   }
 }

@@ -7,6 +7,7 @@ import { HandleActionUiPort } from '../../use-cases';
   templateUrl: './settings.component.html',
 })
 export class SettingsComponent {
+  history$ = this.settingsUseCase.getActionHistory()
 
   constructor(
     private readonly settingsUseCase: HandleActionUiPort

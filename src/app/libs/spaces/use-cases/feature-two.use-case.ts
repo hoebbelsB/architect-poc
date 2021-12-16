@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { FeatureTwoDataPort } from './ports/infrastructure/feature-two-data.port';
+import { SpacesDataPort } from './ports/infrastructure/spaces-data-port.service';
 import { FeatureTwoUiPort } from './ports/ui/feature-two-ui.port';
 
 @Injectable({ providedIn: 'root' })
 export class FeatureTwoUseCase implements FeatureTwoUiPort {
-  constructor(private readonly featureTwoDataPort: FeatureTwoDataPort) {}
+  constructor(private readonly featureTwoDataPort: SpacesDataPort) {}
 
   setState(state: boolean): void {
     this.featureTwoDataPort.toggleState();
