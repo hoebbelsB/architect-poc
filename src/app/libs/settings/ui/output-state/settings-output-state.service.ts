@@ -4,13 +4,10 @@ import { SettingsPort } from '../../use-cases';
 
 @Injectable({ providedIn: 'root' })
 export class SettingsOutputState implements SettingsPort {
-  private readonly state$ = new Subject<boolean>();
+  private readonly _actionTriggered$ = new Subject<string>();
+  readonly actionTriggered$ = this._actionTriggered$.asObservable();
 
-  setState(state: boolean): void {
-    this.state$.next(state);
-  }
-
-  getState(): Observable<boolean> {
-    return this.state$;
+  triggerAction(action: string): void {
+    this._actionTriggered$.next(action);
   }
 }
