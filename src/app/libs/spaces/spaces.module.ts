@@ -3,7 +3,7 @@ import {
   APPLICATION_PROVIDERS,
   INFRASTRUCTURE_PROVIDERS,
 } from './infrastructure';
-import { UiModule, UI_PROVIDERS } from './ui';
+import { UiModule } from './ui';
 
 @NgModule({
   exports: [UiModule],
@@ -17,7 +17,6 @@ export class SpacesModule {
       providers: [
         ...INFRASTRUCTURE_PROVIDERS,
         ...APPLICATION_PROVIDERS,
-        ...UI_PROVIDERS,
       ],
     };
   }

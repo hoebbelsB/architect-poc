@@ -1,7 +1,5 @@
-export * from './ports/infrastructure/settings-data-port.service';
 export * from './ports/infrastructure/spaces-data-port.service';
 
-export * from './ports/spaces-port.service';
 export * from './ports/ui/handle-action-ui-port.service';
 export * from './ports/ui/trigger-action-ui.port';
 

@@ -1,19 +1,13 @@
 import {
   HandleActionUiPort,
-  HandleActionUseCase, SpacesPort,
+  HandleActionUseCase,
   TriggerActionUiPort,
   TriggerActionUseCase,
 } from '../use-cases';
-import { SettingsDataPort } from '../use-cases/ports/infrastructure/settings-data-port.service';
 import { SpacesDataPort } from '../use-cases/ports/infrastructure/spaces-data-port.service';
-import { SettingsStoreService } from './store/settings-store.service';
 import {SpacesStoreService} from "./store/spaces-store.service";
 
 export const INFRASTRUCTURE_PROVIDERS = [
-  {
-    provide: SettingsDataPort,
-    useExisting: SettingsStoreService,
-  },
   {
     provide: SpacesDataPort,
     useExisting: SpacesStoreService,
@@ -21,10 +15,10 @@ export const INFRASTRUCTURE_PROVIDERS = [
 ];
 
 export const APPLICATION_PROVIDERS = [
-  { provide: TriggerActionUiPort, useExisting: TriggerActionUseCase, deps: [SpacesPort], },
+  { provide: TriggerActionUiPort, useExisting: TriggerActionUseCase, deps: [SpacesDataPort], },
   {
     provide: HandleActionUiPort,
     useExisting: HandleActionUseCase,
-    deps: [SettingsDataPort, SpacesDataPort],
+    deps: [SpacesDataPort],
   },
 ];

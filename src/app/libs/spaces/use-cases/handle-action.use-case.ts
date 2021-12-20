@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { SettingsDataPort } from './ports/infrastructure/settings-data-port.service';
 import { HandleActionUiPort } from './ports/ui/handle-action-ui-port.service';
+import { SpacesDataPort } from './ports/infrastructure/spaces-data-port.service';
 
 @Injectable({ providedIn: 'root' })
 export class HandleActionUseCase implements HandleActionUiPort {
   constructor(
-    private readonly settingsDataPort: SettingsDataPort,
+    private readonly spacesDataPort: SpacesDataPort,
   ) {}
 
   getActionData(): Observable<string> {
-    return this.settingsDataPort.getAction();
+    return this.spacesDataPort.getAction();
   }
 
 }
