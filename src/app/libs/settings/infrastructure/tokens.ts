@@ -4,7 +4,7 @@ import {
   SettingsDataPort,
 } from '../use-cases';
 import { SettingsStoreService } from './store/settings-store.service';
-import {SettingsApi} from "./SettingsApi";
+import {SettingsApi} from "./settings.api";
 
 export const INFRASTRUCTURE_PROVIDERS = [
   {

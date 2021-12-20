@@ -1,10 +1,10 @@
 import {
   HandleActionUiPort,
-  HandleActionUseCase,
+  HandleActionUseCase, LoadSpacesPort, LoadSpacesUseCase,
   TriggerActionUiPort,
   TriggerActionUseCase,
 } from '../use-cases';
-import { SpacesDataPort } from '../use-cases/ports/infrastructure/spaces-data-port.service';
+import { SpacesDataPort } from '../use-cases/ports/infrastructure/spaces-data.port';
 import {SpacesStoreService} from "./store/spaces-store.service";
 
 export const INFRASTRUCTURE_PROVIDERS = [
@@ -21,4 +21,9 @@ export const APPLICATION_PROVIDERS = [
     useExisting: HandleActionUseCase,
     deps: [SpacesDataPort],
   },
+  {
+    provide: LoadSpacesPort,
+    useExisting: LoadSpacesUseCase,
+    deps: [SpacesDataPort]
+  }
 ];

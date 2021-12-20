@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HandleActionUiPort } from './ports/ui/handle-action-ui-port.service';
-import { SpacesDataPort } from './ports/infrastructure/spaces-data-port.service';
+import { HandleActionUiPort } from './ports/ui/handle-action-ui.port';
+import { SpacesDataPort } from './ports/infrastructure/spaces-data.port';
 
 @Injectable({ providedIn: 'root' })
 export class HandleActionUseCase implements HandleActionUiPort {
