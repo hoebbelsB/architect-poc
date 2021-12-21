@@ -6,7 +6,7 @@ import {
 import { ShowMenuPort } from '../use-cases/ports/ui/show-menu.port';
 import { ShowMenuUseCase } from '../use-cases/show-menu-use-case.service';
 import { SettingsStoreService } from './store/settings-store.service';
-import {SettingsApi} from "./settings.api";
+import {SettingsApi} from "../ui/settings.api";
 
 export const INFRASTRUCTURE_PROVIDERS = [
   {

@@ -1,5 +1,3 @@
-import { SettingsApi } from '../../settings/infrastructure/settings.api';
-
 import { SidebarDataPort, ShowSettingsUiPort, ShowSettingsUseCase } from '../use-cases';
 import { SidebarStoreService } from './sidebar-store.service';
 

@@ -3,7 +3,7 @@ import { BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
 import { SettingsStateModel } from '../../domain';
 import { SettingsType } from '../../domain/settings-type';
 import { SettingsDataPort } from '../../use-cases';
-import {SettingsApi} from "../settings.api";
+import {SettingsApi} from "../../ui/settings.api";
 
 @Injectable({ providedIn: 'root' })
 export class SettingsStoreService implements SettingsDataPort, SettingsApi {

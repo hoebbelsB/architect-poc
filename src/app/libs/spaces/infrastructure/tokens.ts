@@ -1,12 +1,12 @@
-import { SettingsApi } from '../../settings/infrastructure/settings.api';
+import { SettingsApi } from '../../settings/ui/settings.api';
 import {
   HandleActionUiPort,
   HandleActionUseCase, LoadSpacesPort, LoadSpacesUseCase, ShowSettingsUiPort, ShowSettingsUseCase,
   TriggerActionUiPort,
   TriggerActionUseCase,
 } from '../use-cases';
-import { SpacesDataPort } from '../use-cases/ports/infrastructure/spaces-data.port';
-import {SpacesStoreService} from "./store/spaces-store.service";
+import { SpacesDataPort } from '../use-cases';
+import { SpacesStoreService } from './store/spaces-store.service';
 
 export const INFRASTRUCTURE_PROVIDERS = [
   {
