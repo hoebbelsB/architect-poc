@@ -7,4 +7,4 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   declarations: [SettingsComponent],
 })
-export class UiModule {}
+export class SettingsUiModule {}

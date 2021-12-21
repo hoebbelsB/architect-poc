@@ -3,12 +3,12 @@ import {
   APPLICATION_PROVIDERS,
   INFRASTRUCTURE_PROVIDERS,
 } from './infrastructure';
-import { UiModule } from './ui';
+import { SpacesUiModule } from './ui';
 
 @NgModule({
-  exports: [UiModule],
+  exports: [SpacesUiModule],
   // check if we need this
-  imports: [UiModule],
+  imports: [SpacesUiModule],
 })
 export class SpacesModule {
   static forRoot(): ModuleWithProviders<SpacesModule> {

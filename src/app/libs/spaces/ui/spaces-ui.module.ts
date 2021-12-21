@@ -7,4 +7,4 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   declarations: [SpacesComponent],
 })
-export class UiModule {}
+export class SpacesUiModule {}

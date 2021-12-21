@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { SettingsType } from '../../domain/settings-type';
-import { HandleActionUiPort } from '../../use-cases';
-import { ShowMenuPort } from '../../use-cases/ports/ui/show-menu.port';
+import { SettingsType } from '../../domain';
+import { HandleActionUiPort, ShowMenuUiPort } from '../../use-cases';
 
 @Component({
   selector: 'app-settings',
@@ -11,12 +10,11 @@ export class SettingsComponent {
   history$ = this.settingsUseCase.getActionHistory();
   readonly activeMenu$ = this.showMenuUseCase.getActiveMenu();
 
-  spacesMenuType = SettingsType.SPACES;
-  sidebarSettingsType = SettingsType.SIDEBAR;
+  readonly SettingsType = SettingsType;
 
   constructor(
     private readonly settingsUseCase: HandleActionUiPort,
-    private readonly showMenuUseCase: ShowMenuPort
+    private readonly showMenuUseCase: ShowMenuUiPort
   ) {
     this.activeMenu$.subscribe(m => console.log('activeMenu', m))
   }

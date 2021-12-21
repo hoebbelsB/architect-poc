@@ -1,5 +1,3 @@
-import { SettingsApi } from '../../settings/infrastructure/settings.api';
-
 import { SidebarDataPort, ShowSettingsUiPort, ShowSettingsUseCase } from '../use-cases';
 import { SidebarStoreService } from './sidebar-store.service';
 
@@ -11,5 +9,9 @@ export const INFRASTRUCTURE_PROVIDERS = [
 ];
 
 export const APPLICATION_PROVIDERS = [
-  { provide: ShowSettingsUiPort, useExisting: ShowSettingsUseCase, deps: [SidebarDataPort], }
+  {
+    provide: ShowSettingsUiPort,
+    useExisting: ShowSettingsUseCase,
+    deps: [SidebarDataPort],
+  }
 ];

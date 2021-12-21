@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HandleActionUiPort } from './ports/ui/handle-action.port';
+import { HandleActionUiPort } from './ports/ui/handle-action-ui.port';
 import { SettingsDataPort } from './ports/infrastructure/settings-data-port.service';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';

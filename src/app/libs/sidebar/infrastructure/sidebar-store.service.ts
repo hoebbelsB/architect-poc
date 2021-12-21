@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { SettingsType } from '../../settings/domain/settings-type';
-import { SettingsApi } from '../../settings/infrastructure/settings.api';
-import { SidebarDataPort } from '../use-cases/ports/infrastructure/sidebar-data.port';
+import { SettingsType } from '../../settings/domain';
+import { SettingsApi } from '../../settings/infrastructure';
+import { SidebarDataPort } from '../use-cases';
 
 @Injectable({
   providedIn: 'root'

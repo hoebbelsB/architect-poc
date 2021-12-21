@@ -1,4 +1,4 @@
-export const enum SettingsType {
+export enum SettingsType {
   SPACES = 'spaces',
   SIDEBAR = 'sidebar'
 }

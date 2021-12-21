@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { SettingsType } from '../../../settings/domain/settings-type';
-import { SettingsApi } from '../../../settings/infrastructure/settings.api';
-import { Space } from '../../domain/entities';
-import { SpacesDataPort } from '../../use-cases/ports/infrastructure/spaces-data.port';
+import { SettingsType } from '../../../settings/domain';
+import { SettingsApi } from '../../../settings/infrastructure';
+import { Space } from '../../domain';
+import { SpacesDataPort } from '../../use-cases';
 
 @Injectable({ providedIn: 'root' })
 export class SpacesStoreService implements SpacesDataPort {

@@ -3,10 +3,10 @@ import {
   APPLICATION_PROVIDERS,
   INFRASTRUCTURE_PROVIDERS,
 } from './infrastructure';
-import { UiModule } from './ui';
+import { SettingsUiModule } from './ui';
 
 @NgModule({
-  exports: [UiModule],
+  exports: [SettingsUiModule],
 })
 export class SettingsModule {
   static forRoot(): ModuleWithProviders<SettingsModule> {

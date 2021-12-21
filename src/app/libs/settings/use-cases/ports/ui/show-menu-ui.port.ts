@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { SettingsType } from '../../../domain/settings-type';
+import { SettingsType } from '../../../domain';
 
 @Injectable()
-export abstract class ShowMenuPort {
+export abstract class ShowMenuUiPort {
   // TODO: add menuItems: Observable or clarify how we render different types otherwise
   abstract getActiveMenu(): Observable<SettingsType | null>;
 }
