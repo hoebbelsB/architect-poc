@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { SettingsType } from '../../settings/domain';
-import { SettingsApi } from '../../settings/infrastructure';
+import { SettingsApi, SettingsType } from '../../settings/ui/settings.api';
 import { SidebarDataPort } from '../use-cases';
 
 @Injectable({

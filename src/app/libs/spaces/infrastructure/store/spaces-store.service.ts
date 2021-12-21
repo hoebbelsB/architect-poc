@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { SettingsType } from '../../../settings/domain';
-import { SettingsApi } from '../../../settings/infrastructure';
-import { Space } from '../../domain';
+import { SettingsApi, SettingsType } from '../../../settings/ui/settings.api';
+import { Space } from '../../domain/entities';
 import { SpacesDataPort } from '../../use-cases';
 
 @Injectable({ providedIn: 'root' })

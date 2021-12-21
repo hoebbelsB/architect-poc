@@ -1,4 +1,4 @@
-import { SettingsApi } from '../../settings/infrastructure';
+import { SettingsApi } from '../../settings/ui/settings.api';
 import {
   HandleActionUiPort,
   HandleActionUseCase, LoadSpacesUiPort, LoadSpacesUseCase, ShowSettingsUiPort, ShowSettingsUseCase,

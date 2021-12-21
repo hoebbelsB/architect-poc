@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, ReplaySubject } from 'rxjs';
 import { SettingsState, SettingsType } from '../../domain';
 import { SettingsDataPort } from '../../use-cases';
-import { SettingsApi } from '../settings.api';
+import { SettingsApi } from '../../ui/settings.api';
 
 @Injectable({providedIn: 'root'})
 export class SettingsStoreService implements SettingsDataPort, SettingsApi {
