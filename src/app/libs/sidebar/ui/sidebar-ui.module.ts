@@ -13,6 +13,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     SidebarComponent
   ],
   declarations: [SidebarComponent],
-  providers: [],
+  providers: [
+
+  ],
 })
-export class SidebarModule {}
+export class SidebarUiModule {}
