@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Space } from '../../domain/entities';
-import { SpacesDataPort } from '../../use-cases/ports/infrastructure/spaces-data.port';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
-import {SettingsApi} from "../../../settings/infrastructure/settings.api";
+import { SettingsType } from '../../../settings/domain/settings-type';
+import { SettingsApi } from '../../../settings/infrastructure/settings.api';
+import { Space } from '../../domain/entities';
+import { SpacesDataPort } from '../../use-cases/ports/infrastructure/spaces-data.port';
 
 @Injectable({ providedIn: 'root' })
 export class SpacesStoreService implements SpacesDataPort {
@@ -22,6 +23,10 @@ export class SpacesStoreService implements SpacesDataPort {
     return this.settingsStore.settingsState$.pipe(
         map(({ lastAction }) => lastAction)
     );
+  }
+
+  showSpacesSettings(): void {
+    this.settingsStore.showSettings(SettingsType.SPACES);
   }
 
   clearHistory(): void {

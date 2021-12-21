@@ -7,7 +7,6 @@ export class TriggerActionUseCase implements TriggerActionUiPort {
   constructor(private readonly store: SpacesDataPort) {}
 
   triggerClearHistory(): void {
-    console.log('TriggerActionUseCase')
     this.store.clearHistory();
   }
 

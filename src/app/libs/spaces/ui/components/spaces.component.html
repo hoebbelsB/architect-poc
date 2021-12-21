@@ -5,6 +5,7 @@
 <div class="spaces-list">
   <div *ngFor="let space of spaces$ | async;"
        class="space">
-    {{ space.name }}
+    <span>{{ space.name }}</span>
+    <button (click)="showSpacesSettings()">toggle menu</button>
   </div>
 </div>
