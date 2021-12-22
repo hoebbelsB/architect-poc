@@ -1,5 +1,5 @@
 import {
-  SettingsDataPort, SettingsUiPort, SettingsUseCase,
+  SettingsDataPort, SettingsUiPort, SettingsAdapter,
 } from '../use-cases';
 import { SettingsStoreService } from './store/settings-store.service';
 import { SettingsApi } from '../ui';
@@ -18,7 +18,7 @@ export const DATA_PROVIDERS = [
 export const UI_PROVIDERS = [
   {
     provide: SettingsUiPort,
-    useExisting: SettingsUseCase,
+    useExisting: SettingsAdapter,
     deps: [SettingsDataPort],
   },
 ];

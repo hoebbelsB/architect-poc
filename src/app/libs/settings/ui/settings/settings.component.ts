@@ -7,8 +7,8 @@ import { SettingsUiPort } from '../../use-cases';
   templateUrl: './settings.component.html',
 })
 export class SettingsComponent {
-  readonly history$ = this.settingsUseCase.getActionHistory();
-  readonly activeMenu$ = this.settingsUseCase.getActiveMenu();
+  readonly history$ = this.settingsUseCase.actionHistory$;
+  readonly activeMenu$ = this.settingsUseCase.activeMenu$;
 
   readonly SettingsType = SettingsType;
 

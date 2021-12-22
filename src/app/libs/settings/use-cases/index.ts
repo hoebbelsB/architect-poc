@@ -10,4 +10,4 @@ export * from './ports/data/settings-data.port';
 /**
  * Use Case implementations
  */
-export * from './settings.use-case';
+export * from './settings-adapter.service';
