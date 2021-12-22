@@ -3,7 +3,7 @@ import {
   UI_PROVIDERS,
   DATA_PROVIDERS,
 } from './data';
-import { SpacesUiModule } from './ui';
+import { SpacesUiModule } from './public/ui';
 
 @NgModule({
   exports: [SpacesUiModule],

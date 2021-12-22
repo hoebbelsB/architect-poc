@@ -1,6 +1,6 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { UI_PROVIDERS, DATA_PROVIDERS } from './data';
-import { SidebarUiModule } from './ui';
+import { SidebarUiModule } from './public/ui';
 
 @NgModule({
   imports: [SidebarUiModule],

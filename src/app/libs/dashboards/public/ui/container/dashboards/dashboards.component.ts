@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DashboardsUiPort } from '../../use-cases';
+import { DashboardsUiPort } from '../../../../use-cases/index';
 
 @Component({
   selector: 'app-dashboards',

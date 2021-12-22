@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { DashboardsComponent } from './dashboards/dashboards.component';
+import { DashboardsComponent } from './container/dashboards/dashboards.component';
 
 @NgModule({
   declarations: [DashboardsComponent],

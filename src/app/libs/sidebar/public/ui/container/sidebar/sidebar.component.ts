@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { SidebarUiPort } from '../../use-cases';
+import { SidebarUiPort } from '../../../../use-cases/index';
 
 @Component({
   selector: 'app-sidebar',

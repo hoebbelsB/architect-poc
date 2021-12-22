@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SpacesUiPort } from '../../use-cases';
+import { SpacesUiPort } from '../../../../use-cases/index';
 
 @Component({
   selector: 'app-spaces',
