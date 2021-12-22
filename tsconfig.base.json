@@ -43,7 +43,19 @@
       "@architect-poc/spaces/data": ["libs/spaces/data/src/index.ts"],
       "@architect-poc/spaces/domain": ["libs/spaces/domain/src/index.ts"],
       "@architect-poc/spaces/public/ui": ["libs/spaces/public/ui/src/index.ts"],
-      "@architect-poc/spaces/use-cases": ["libs/spaces/use-cases/src/index.ts"]
+      "@architect-poc/spaces/use-cases": ["libs/spaces/use-cases/src/index.ts"],
+      "@architect-poc/dashboards/data": ["libs/dashboards/data/src/index.ts"],
+      "@architect-poc/settings/data": ["libs/settings/data/src/index.ts"],
+      "@architect-poc/settings/domain": ["libs/settings/domain/src/index.ts"],
+      "@architect-poc/settings/public/interfaces": [
+        "libs/settings/public/interfaces/src/index.ts"
+      ],
+      "@architect-poc/settings/public/ui": [
+        "libs/settings/public/ui/src/index.ts"
+      ],
+      "@architect-poc/settings/use-cases": [
+        "libs/settings/use-cases/src/index.ts"
+      ]
     },
     "rootDir": "."
   },

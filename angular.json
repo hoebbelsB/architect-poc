@@ -438,6 +438,136 @@
         }
       },
       "tags": ["scope:spaces"]
+    },
+    "settings-data": {
+      "projectType": "library",
+      "root": "libs/settings/data",
+      "sourceRoot": "libs/settings/data/src",
+      "prefix": "architect-poc",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/settings/data"],
+          "options": {
+            "jestConfig": "libs/settings/data/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/settings/data/src/**/*.ts",
+              "libs/settings/data/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["scope:settings"]
+    },
+    "settings-domain": {
+      "projectType": "library",
+      "root": "libs/settings/domain",
+      "sourceRoot": "libs/settings/domain/src",
+      "prefix": "architect-poc",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/settings/domain"],
+          "options": {
+            "jestConfig": "libs/settings/domain/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/settings/domain/src/**/*.ts",
+              "libs/settings/domain/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["scope:settings"]
+    },
+    "settings-public-interfaces": {
+      "projectType": "library",
+      "root": "libs/settings/public/interfaces",
+      "sourceRoot": "libs/settings/public/interfaces/src",
+      "prefix": "architect-poc",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/settings/public/interfaces"],
+          "options": {
+            "jestConfig": "libs/settings/public/interfaces/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/settings/public/interfaces/src/**/*.ts",
+              "libs/settings/public/interfaces/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["scope:settings"]
+    },
+    "settings-public-ui": {
+      "projectType": "library",
+      "root": "libs/settings/public/ui",
+      "sourceRoot": "libs/settings/public/ui/src",
+      "prefix": "architect-poc",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/settings/public/ui"],
+          "options": {
+            "jestConfig": "libs/settings/public/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/settings/public/ui/src/**/*.ts",
+              "libs/settings/public/ui/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["scope:settings"]
+    },
+    "settings-use-cases": {
+      "projectType": "library",
+      "root": "libs/settings/use-cases",
+      "sourceRoot": "libs/settings/use-cases/src",
+      "prefix": "architect-poc",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/settings/use-cases"],
+          "options": {
+            "jestConfig": "libs/settings/use-cases/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/settings/use-cases/src/**/*.ts",
+              "libs/settings/use-cases/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["scope:settings"]
     }
   }
 }
