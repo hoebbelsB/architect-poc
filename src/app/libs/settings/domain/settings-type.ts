@@ -1,4 +1,5 @@
 export enum SettingsType {
   SPACES = 'spaces',
-  SIDEBAR = 'sidebar'
+  SIDEBAR = 'sidebar',
+  DASHBOARDS = 'dashboards'
 }

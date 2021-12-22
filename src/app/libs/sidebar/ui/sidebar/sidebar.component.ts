@@ -8,6 +8,7 @@ import { SidebarUiPort } from '../../use-cases';
     <button (click)="showSettings()">Toggle sidebar settings</button>
     <app-settings></app-settings>
     <app-spaces></app-spaces>
+    <app-dashboards></app-dashboards>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })

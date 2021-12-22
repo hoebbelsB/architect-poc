@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
+import { DashboardsUiModule } from '../../dashboards/ui';
 import { SettingsUiModule } from '../../settings/ui';
-import { SpacesModule } from '../../spaces/spaces.module';
+import { SpacesUiModule } from '../../spaces/ui';
 
 import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   imports: [
     SettingsUiModule,
-    SpacesModule
+    SpacesUiModule,
+    DashboardsUiModule
   ],
   exports: [
     SidebarComponent
