@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Dashboard } from '@architect-poc/dashboards/domain';
 import { Observable } from 'rxjs';
-import { Dashboard } from '../domain';
 import { DashboardsDataPort } from './ports/data/dashboards-data.port';
 import { DashboardsUiPort } from './ports/ui/dashboards-ui.port';
 

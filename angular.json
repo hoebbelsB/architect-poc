@@ -126,6 +126,84 @@
         }
       },
       "tags": ["scope:dashboards"]
+    },
+    "dashboards-domain": {
+      "projectType": "library",
+      "root": "libs/dashboards/domain",
+      "sourceRoot": "libs/dashboards/domain/src",
+      "prefix": "architect-poc",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/dashboards/domain"],
+          "options": {
+            "jestConfig": "libs/dashboards/domain/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/dashboards/domain/src/**/*.ts",
+              "libs/dashboards/domain/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["scope:dashboards"]
+    },
+    "dashboards-public-ui": {
+      "projectType": "library",
+      "root": "libs/dashboards/public/ui",
+      "sourceRoot": "libs/dashboards/public/ui/src",
+      "prefix": "architect-poc",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/dashboards/public/ui"],
+          "options": {
+            "jestConfig": "libs/dashboards/public/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/dashboards/public/ui/src/**/*.ts",
+              "libs/dashboards/public/ui/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["scope:shared"]
+    },
+    "dashboards-use-cases": {
+      "projectType": "library",
+      "root": "libs/dashboards/use-cases",
+      "sourceRoot": "libs/dashboards/use-cases/src",
+      "prefix": "architect-poc",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/dashboards/use-cases"],
+          "options": {
+            "jestConfig": "libs/dashboards/use-cases/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/dashboards/use-cases/src/**/*.ts",
+              "libs/dashboards/use-cases/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["scope:dashboards"]
     }
   }
 }

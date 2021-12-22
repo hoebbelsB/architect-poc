@@ -1,6 +1,6 @@
 
-import { SettingsApi } from '../../settings/public/interfaces';
-import { DashboardsDataPort, DashboardsUiPort, DashboardsUseCase } from '../use-cases';
+import { DashboardsDataPort, DashboardsUiPort, DashboardsUseCase } from '@architect-poc/dashboards/use-cases';
+import { SettingsApi } from '../../../../../apps/architect-poc/src/app/libs/settings/public/interfaces/index';
 import { DashboardsStoreService } from './store/dashboards-store.service';
 
 export const DATA_PROVIDERS = [

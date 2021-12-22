@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { DashboardsUiModule } from '../../../dashboards/public/ui/index';
+import { DashboardsUiModule } from '../../../../../../../../libs/dashboards/public/ui/src/lib/index';
 import { SettingsUiModule } from '../../../settings/public/ui/index';
 import { SpacesUiModule } from '../../../spaces/public/ui/index';
 
