@@ -205,6 +205,32 @@
       },
       "tags": ["scope:dashboards"]
     },
+    "design-system-public-ui": {
+      "projectType": "library",
+      "root": "libs/design-system/public/ui",
+      "sourceRoot": "libs/design-system/public/ui/src",
+      "prefix": "architect-poc",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/design-system/public/ui"],
+          "options": {
+            "jestConfig": "libs/design-system/public/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/design-system/public/ui/src/**/*.ts",
+              "libs/design-system/public/ui/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["scope:shared"]
+    },
     "sidebar-data": {
       "projectType": "library",
       "root": "libs/sidebar/data",
@@ -308,6 +334,110 @@
         }
       },
       "tags": ["scope:sidebar"]
+    },
+    "spaces-data": {
+      "projectType": "library",
+      "root": "libs/spaces/data",
+      "sourceRoot": "libs/spaces/data/src",
+      "prefix": "architect-poc",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/spaces/data"],
+          "options": {
+            "jestConfig": "libs/spaces/data/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/spaces/data/src/**/*.ts",
+              "libs/spaces/data/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["scope:spaces"]
+    },
+    "spaces-domain": {
+      "projectType": "library",
+      "root": "libs/spaces/domain",
+      "sourceRoot": "libs/spaces/domain/src",
+      "prefix": "architect-poc",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/spaces/domain"],
+          "options": {
+            "jestConfig": "libs/spaces/domain/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/spaces/domain/src/**/*.ts",
+              "libs/spaces/domain/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["scope:spaces"]
+    },
+    "spaces-public-ui": {
+      "projectType": "library",
+      "root": "libs/spaces/public/ui",
+      "sourceRoot": "libs/spaces/public/ui/src",
+      "prefix": "architect-poc",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/spaces/public/ui"],
+          "options": {
+            "jestConfig": "libs/spaces/public/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/spaces/public/ui/src/**/*.ts",
+              "libs/spaces/public/ui/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["scope:shared"]
+    },
+    "spaces-use-cases": {
+      "projectType": "library",
+      "root": "libs/spaces/use-cases",
+      "sourceRoot": "libs/spaces/use-cases/src",
+      "prefix": "architect-poc",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/spaces/use-cases"],
+          "options": {
+            "jestConfig": "libs/spaces/use-cases/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/spaces/use-cases/src/**/*.ts",
+              "libs/spaces/use-cases/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["scope:spaces"]
     }
   }
 }

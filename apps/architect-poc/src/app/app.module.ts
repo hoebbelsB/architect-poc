@@ -4,7 +4,7 @@ import { DashboardsModule } from '@architect-poc/dashboards/public/ui';
 
 import { AppComponent } from './app.component';
 import { SidebarModule } from '@architect-poc/sidebar/public/ui';
-import { SpacesModule } from './libs/spaces/spaces.module';
+import { SpacesModule } from '@architect-poc/spaces/public/ui';
 import { SettingsModule } from './libs/settings/settings.module';
 
 @NgModule({

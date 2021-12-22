@@ -29,6 +29,9 @@
       "@architect-poc/dashboards/use-cases": [
         "libs/dashboards/use-cases/src/index.ts"
       ],
+      "@architect-poc/design-system/public/ui": [
+        "libs/design-system/public/ui/src/index.ts"
+      ],
       "@architect-poc/sidebar/data": ["libs/sidebar/data/src/index.ts"],
       "@architect-poc/sidebar/domain": ["libs/sidebar/domain/src/index.ts"],
       "@architect-poc/sidebar/public/ui": [
@@ -36,7 +39,11 @@
       ],
       "@architect-poc/sidebar/use-cases": [
         "libs/sidebar/use-cases/src/index.ts"
-      ]
+      ],
+      "@architect-poc/spaces/data": ["libs/spaces/data/src/index.ts"],
+      "@architect-poc/spaces/domain": ["libs/spaces/domain/src/index.ts"],
+      "@architect-poc/spaces/public/ui": ["libs/spaces/public/ui/src/index.ts"],
+      "@architect-poc/spaces/use-cases": ["libs/spaces/use-cases/src/index.ts"]
     },
     "rootDir": "."
   },

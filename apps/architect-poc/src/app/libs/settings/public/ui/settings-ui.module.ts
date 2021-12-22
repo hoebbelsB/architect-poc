@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ButtonComponentModule } from '../../../design-system/public/ui/index';
+import { ButtonComponentModule } from '@architect-poc/design-system/public/ui';
 import { SettingsComponent } from './container/settings/settings.component';
 import { CommonModule } from '@angular/common';
 
