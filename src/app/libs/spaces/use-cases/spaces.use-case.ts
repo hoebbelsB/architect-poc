@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Space } from '../domain';
-import { SpacesDataPort } from './ports/infrastructure/spaces-data.port';
+import { SpacesDataPort } from './ports/data/spaces-data.port';
 import { SpacesUiPort } from './ports/ui/spaces-ui.port';
 
 @Injectable({providedIn: 'root'})

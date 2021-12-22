@@ -1,14 +1,14 @@
 import { SidebarDataPort, SidebarUiPort, SidebarUseCase } from '../use-cases';
 import { SidebarStoreService } from './sidebar-store.service';
 
-export const INFRASTRUCTURE_PROVIDERS = [
+export const DATA_PROVIDERS = [
   {
     provide: SidebarDataPort,
     useExisting: SidebarStoreService,
   },
 ];
 
-export const APPLICATION_PROVIDERS = [
+export const UI_PROVIDERS = [
   {
     provide: SidebarUiPort,
     useExisting: SidebarUseCase,

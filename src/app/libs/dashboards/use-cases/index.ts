@@ -5,7 +5,7 @@ export * from './ports/ui/dashboards-ui.port';
 /**
  * Infrastructure Ports
  */
-export * from './ports/infrastructure/dashboards-data.port';
+export * from './ports/data/dashboards-data.port';
 
 /**
  * Use Case implementations

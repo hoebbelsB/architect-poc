@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { SpacesComponent } from './components/spaces.component';
+import { SpacesComponent } from './spaces/spaces.component';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
