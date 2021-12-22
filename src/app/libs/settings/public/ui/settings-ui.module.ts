@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { SettingsComponent } from './settings/settings.component';
+import { SettingsComponent } from './container/settings/settings.component';
 import { CommonModule } from '@angular/common';
 
 @NgModule({

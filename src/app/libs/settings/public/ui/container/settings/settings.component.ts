@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { SettingsType } from '../../domain';
-import { SettingsUiPort } from '../../use-cases';
+import { SettingsType } from '../../../../domain/index';
+import { SettingsUiPort } from '../../../../use-cases/index';
 
 @Component({
   selector: 'app-settings',

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { DashboardsUiModule } from '../../dashboards/ui';
-import { SettingsUiModule } from '../../settings/ui';
+import { SettingsUiModule } from '../../settings/public/ui/index';
 import { SpacesUiModule } from '../../spaces/ui';
 
 import { SidebarComponent } from './sidebar/sidebar.component';

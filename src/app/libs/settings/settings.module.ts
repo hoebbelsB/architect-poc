@@ -3,7 +3,7 @@ import {
   UI_PROVIDERS,
   DATA_PROVIDERS,
 } from './data';
-import { SettingsUiModule } from './ui';
+import { SettingsUiModule } from './public/ui';
 
 @NgModule({
   exports: [SettingsUiModule],
