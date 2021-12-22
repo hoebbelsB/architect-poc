@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export abstract class ShowSettingsUiPort {
+export abstract class SidebarUiPort {
   abstract showSettings(): void;
 }

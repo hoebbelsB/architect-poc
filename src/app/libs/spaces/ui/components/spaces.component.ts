@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HandleActionUiPort, LoadSpacesUiPort, ShowSettingsUiPort, TriggerActionUiPort } from '../../use-cases';
+import { SpacesUiPort } from '../../use-cases';
 
 @Component({
   selector: 'app-spaces',
@@ -21,22 +21,19 @@ import { HandleActionUiPort, LoadSpacesUiPort, ShowSettingsUiPort, TriggerAction
   `]
 })
 export class SpacesComponent {
-  readonly action$ = this.handleActionUseCase.getActionData();
-  readonly spaces$ = this.loadSpacesUseCase.loadSpaces();
+  readonly action$ = this.spacesUseCase.getActionData();
+  readonly spaces$ = this.spacesUseCase.loadSpaces();
 
   constructor(
-    private readonly handleActionUseCase: HandleActionUiPort,
-    private readonly triggerActionUseCase: TriggerActionUiPort,
-    private readonly loadSpacesUseCase: LoadSpacesUiPort,
-    private readonly showSettingsUseCase: ShowSettingsUiPort
+    private readonly spacesUseCase: SpacesUiPort
   ) {
   }
 
   showSpacesSettings() {
-    this.showSettingsUseCase.showSettings();
+    this.spacesUseCase.showSettings();
   }
 
   clearHistory() {
-    this.triggerActionUseCase.triggerClearHistory();
+    this.spacesUseCase.triggerClearHistory();
   }
 }
