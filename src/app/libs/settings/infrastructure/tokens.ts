@@ -6,7 +6,7 @@ import {
   ShowMenuUseCase
 } from '../use-cases';
 import { SettingsStoreService } from './store/settings-store.service';
-import { SettingsApi } from '../ui/settings.api';
+import { SettingsApi } from '../ui';
 
 export const INFRASTRUCTURE_PROVIDERS = [
   {

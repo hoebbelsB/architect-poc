@@ -5,7 +5,8 @@ import { DashboardsStoreService } from './store/dashboards-store.service';
 export const INFRASTRUCTURE_PROVIDERS = [
   {
     provide: DashboardsDataPort,
-    useExisting: DashboardsStoreService
+    useExisting: DashboardsStoreService,
+    deps: [SettingsApi]
   }
 ];
 
@@ -13,6 +14,6 @@ export const APPLICATION_PROVIDERS = [
   {
     provide: DashboardsUiPort,
     useExisting: DashboardsUseCase,
-    deps: [DashboardsDataPort, SettingsApi]
+    deps: [DashboardsDataPort]
   }
 ];
