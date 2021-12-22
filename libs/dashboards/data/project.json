@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/dashboards/data",
+  "sourceRoot": "libs/dashboards/data/src",
+  "prefix": "architect-poc",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/dashboards/data"],
+      "options": {
+        "jestConfig": "libs/dashboards/data/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/dashboards/data/src/**/*.ts",
+          "libs/dashboards/data/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:dashboards"]
+}

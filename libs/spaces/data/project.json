@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/spaces/data",
+  "sourceRoot": "libs/spaces/data/src",
+  "prefix": "architect-poc",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/spaces/data"],
+      "options": {
+        "jestConfig": "libs/spaces/data/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/spaces/data/src/**/*.ts",
+          "libs/spaces/data/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:spaces"]
+}

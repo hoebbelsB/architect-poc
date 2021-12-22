@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/design-system/public/ui",
+  "sourceRoot": "libs/design-system/public/ui/src",
+  "prefix": "architect-poc",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/design-system/public/ui"],
+      "options": {
+        "jestConfig": "libs/design-system/public/ui/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/design-system/public/ui/src/**/*.ts",
+          "libs/design-system/public/ui/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:shared"]
+}
