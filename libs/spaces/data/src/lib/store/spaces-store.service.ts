@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
+import { SettingsApi, SettingsType } from '@architect-poc/settings/public/interfaces';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { SettingsApi, SettingsType } from '../../../../../../apps/architect-poc/src/app/libs/settings/public/interfaces/index';
 import { Space } from '@architect-poc/spaces/domain';
 import { SpacesDataPort } from '@architect-poc/spaces/use-cases';
 

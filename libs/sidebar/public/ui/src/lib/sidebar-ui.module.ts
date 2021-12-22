@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { DashboardsUiModule } from '@architect-poc/dashboards/public/ui';
-import { SettingsUiModule } from '../../../../../../apps/architect-poc/src/app/libs/settings/public/ui/index';
-import { SpacesUiModule } from '../../../../../spaces/public/ui/src/lib/index';
+import { SettingsUiModule } from '@architect-poc/settings/public/ui';
+import { SpacesUiModule } from '@architect-poc/spaces/public/ui';
 
 import { SidebarComponent } from './container/sidebar/sidebar.component';
 

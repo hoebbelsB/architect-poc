@@ -1,5 +1,5 @@
-import { SettingsApi } from '../../../../../apps/architect-poc/src/app/libs/settings/public/interfaces/index';
-import { SpacesDataPort, SpacesUiPort, SpacesUseCase } from '../../../use-cases/src/lib/index';
+import { SettingsApi } from '@architect-poc/settings/public/interfaces';
+import { SpacesDataPort, SpacesUiPort, SpacesUseCase } from '@architect-poc/spaces/use-cases';
 import { SpacesStoreService } from './store/spaces-store.service';
 
 export const DATA_PROVIDERS = [
