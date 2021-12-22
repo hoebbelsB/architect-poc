@@ -4,7 +4,7 @@ import {
 import { SettingsStoreService } from './store/settings-store.service';
 import { SettingsApi } from '../ui';
 
-export const INFRASTRUCTURE_PROVIDERS = [
+export const DATA_PROVIDERS = [
   {
     provide: SettingsDataPort,
     useExisting: SettingsStoreService,
@@ -15,7 +15,7 @@ export const INFRASTRUCTURE_PROVIDERS = [
   }
 ];
 
-export const APPLICATION_PROVIDERS = [
+export const UI_PROVIDERS = [
   {
     provide: SettingsUiPort,
     useExisting: SettingsUseCase,

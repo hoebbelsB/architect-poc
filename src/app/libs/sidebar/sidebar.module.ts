@@ -1,5 +1,5 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { APPLICATION_PROVIDERS, INFRASTRUCTURE_PROVIDERS } from './infrastructure';
+import { UI_PROVIDERS, DATA_PROVIDERS } from './data';
 import { SidebarUiModule } from './ui';
 
 @NgModule({
@@ -13,8 +13,8 @@ export class SidebarModule {
     return {
       ngModule: SidebarModule,
       providers: [
-        ...INFRASTRUCTURE_PROVIDERS,
-        ...APPLICATION_PROVIDERS,
+        ...DATA_PROVIDERS,
+        ...UI_PROVIDERS,
       ],
     };
   }

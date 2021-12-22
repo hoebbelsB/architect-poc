@@ -1,8 +1,8 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import {
-  APPLICATION_PROVIDERS,
-  INFRASTRUCTURE_PROVIDERS,
-} from './infrastructure';
+  UI_PROVIDERS,
+  DATA_PROVIDERS,
+} from './data';
 import { SettingsUiModule } from './ui';
 
 @NgModule({
@@ -13,8 +13,8 @@ export class SettingsModule {
     return {
       ngModule: SettingsModule,
       providers: [
-        ...INFRASTRUCTURE_PROVIDERS,
-        ...APPLICATION_PROVIDERS,
+        ...DATA_PROVIDERS,
+        ...UI_PROVIDERS,
       ],
     };
   }

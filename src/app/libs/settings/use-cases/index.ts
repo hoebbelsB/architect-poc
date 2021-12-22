@@ -5,7 +5,7 @@ export * from './ports/ui/settings-ui.port';
 /**
  * Infrastructure Ports
  */
-export * from './ports/infrastructure/settings-data.port';
+export * from './ports/data/settings-data.port';
 
 /**
  * Use Case implementations

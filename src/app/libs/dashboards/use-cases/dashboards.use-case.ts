@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Dashboard } from '../domain';
-import { DashboardsDataPort } from './ports/infrastructure/dashboards-data.port';
+import { DashboardsDataPort } from './ports/data/dashboards-data.port';
 import { DashboardsUiPort } from './ports/ui/dashboards-ui.port';
 
 @Injectable({providedIn: 'root'})

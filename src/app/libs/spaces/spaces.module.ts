@@ -1,8 +1,8 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import {
-  APPLICATION_PROVIDERS,
-  INFRASTRUCTURE_PROVIDERS,
-} from './infrastructure';
+  UI_PROVIDERS,
+  DATA_PROVIDERS,
+} from './data';
 import { SpacesUiModule } from './ui';
 
 @NgModule({
@@ -15,8 +15,8 @@ export class SpacesModule {
     return {
       ngModule: SpacesModule,
       providers: [
-        ...INFRASTRUCTURE_PROVIDERS,
-        ...APPLICATION_PROVIDERS,
+        ...DATA_PROVIDERS,
+        ...UI_PROVIDERS,
       ],
     };
   }

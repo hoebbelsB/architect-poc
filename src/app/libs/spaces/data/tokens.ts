@@ -2,7 +2,7 @@ import { SettingsApi } from '../../settings/ui';
 import { SpacesDataPort, SpacesUiPort, SpacesUseCase } from '../use-cases';
 import { SpacesStoreService } from './store/spaces-store.service';
 
-export const INFRASTRUCTURE_PROVIDERS = [
+export const DATA_PROVIDERS = [
   {
     provide: SpacesDataPort,
     useExisting: SpacesStoreService,
@@ -10,7 +10,7 @@ export const INFRASTRUCTURE_PROVIDERS = [
   },
 ];
 
-export const APPLICATION_PROVIDERS = [
+export const UI_PROVIDERS = [
   {
     provide: SpacesUiPort,
     useExisting: SpacesUseCase,

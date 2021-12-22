@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { SettingsType } from '../domain';
-import { SettingsDataPort } from './ports/infrastructure/settings-data.port';
+import { SettingsDataPort } from './ports/data/settings-data.port';
 import { SettingsUiPort } from './ports/ui/settings-ui.port';
 
 @Injectable({providedIn: 'root'})
