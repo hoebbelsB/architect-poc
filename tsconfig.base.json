@@ -1,8 +1,7 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -18,10 +17,11 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",
-    "lib": [
-      "es2020",
-      "dom"
-    ]
+    "lib": ["es2020", "dom"],
+    "paths": {
+      "@architect-poc/dashboards/data": ["libs/dashboards/data/src/index.ts"]
+    },
+    "rootDir": "."
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
