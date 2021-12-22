@@ -1,9 +1,7 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import {
-  UI_PROVIDERS,
-  DATA_PROVIDERS,
-} from './data';
-import { SettingsUiModule } from './public/ui';
+import { DATA_PROVIDERS, UI_PROVIDERS } from '@architect-poc/settings/data';
+import { SettingsUiModule } from './settings-ui.module';
+
 
 @NgModule({
   exports: [SettingsUiModule],
