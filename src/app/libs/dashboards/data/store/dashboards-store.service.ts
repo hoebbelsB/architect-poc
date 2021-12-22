@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { SettingsApi, SettingsType } from '../../../settings/ui';
+import { SettingsApi, SettingsType } from '../../../settings/public/interfaces/index';
 import { Dashboard } from '../../domain';
 import { DashboardsDataPort } from '../../use-cases';
 

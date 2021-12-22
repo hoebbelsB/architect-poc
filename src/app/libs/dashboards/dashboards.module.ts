@@ -1,6 +1,6 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { UI_PROVIDERS, DATA_PROVIDERS } from './data';
-import { DashboardsUiModule } from './ui';
+import { DashboardsUiModule } from './public/ui';
 
 @NgModule({
   exports: [DashboardsUiModule]

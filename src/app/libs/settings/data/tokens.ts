@@ -2,7 +2,7 @@ import {
   SettingsDataPort, SettingsUiPort, SettingsAdapter,
 } from '../use-cases';
 import { SettingsStoreService } from './store/settings-store.service';
-import { SettingsApi } from '../ui';
+import { SettingsApi } from '../public/interfaces';
 
 export const DATA_PROVIDERS = [
   {

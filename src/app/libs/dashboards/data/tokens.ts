@@ -1,4 +1,5 @@
-import { SettingsApi } from '../../settings/ui';
+
+import { SettingsApi } from '../../settings/public/interfaces';
 import { DashboardsDataPort, DashboardsUiPort, DashboardsUseCase } from '../use-cases';
 import { DashboardsStoreService } from './store/dashboards-store.service';
 

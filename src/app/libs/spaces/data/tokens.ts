@@ -1,4 +1,4 @@
-import { SettingsApi } from '../../settings/ui';
+import { SettingsApi } from '../../settings/public/interfaces/index';
 import { SpacesDataPort, SpacesUiPort, SpacesUseCase } from '../use-cases';
 import { SpacesStoreService } from './store/spaces-store.service';
 
