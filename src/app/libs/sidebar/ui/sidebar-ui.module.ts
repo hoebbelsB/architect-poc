@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { UiModule } from '../../settings/ui/index';
+import { SettingsUiModule } from '../../settings/ui';
 import { SpacesModule } from '../../spaces/spaces.module';
 
 import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   imports: [
-    UiModule,
+    SettingsUiModule,
     SpacesModule
   ],
   exports: [

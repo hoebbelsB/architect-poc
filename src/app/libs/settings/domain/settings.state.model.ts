@@ -1,4 +1,4 @@
-export interface SettingsStateModel {
+export interface SettingsState {
   history: string[];
   lastAction: string;
 }

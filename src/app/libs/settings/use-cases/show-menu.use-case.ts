@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { SettingsType } from '../domain/settings-type';
+import { SettingsType } from '../domain';
 import { SettingsDataPort } from './ports/infrastructure/settings-data-port.service';
 import { Observable } from 'rxjs';
-import { ShowMenuPort } from './ports/ui/show-menu.port';
+import { ShowMenuUiPort } from './ports/ui/show-menu-ui.port';
 
 @Injectable({ providedIn: 'root' })
-export class ShowMenuUseCase implements ShowMenuPort {
+export class ShowMenuUseCase implements ShowMenuUiPort {
 
   constructor(
     private readonly localState: SettingsDataPort,

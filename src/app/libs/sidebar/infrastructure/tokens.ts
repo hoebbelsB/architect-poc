@@ -9,5 +9,9 @@ export const INFRASTRUCTURE_PROVIDERS = [
 ];
 
 export const APPLICATION_PROVIDERS = [
-  { provide: ShowSettingsUiPort, useExisting: ShowSettingsUseCase, deps: [SidebarDataPort], }
+  {
+    provide: ShowSettingsUiPort,
+    useExisting: ShowSettingsUseCase,
+    deps: [SidebarDataPort],
+  }
 ];

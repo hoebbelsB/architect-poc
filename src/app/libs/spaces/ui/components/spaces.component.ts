@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HandleActionUiPort, LoadSpacesPort, ShowSettingsUiPort, TriggerActionUiPort } from '../../use-cases';
+import { HandleActionUiPort, LoadSpacesUiPort, ShowSettingsUiPort, TriggerActionUiPort } from '../../use-cases';
 
 @Component({
   selector: 'app-spaces',
@@ -11,6 +11,7 @@ import { HandleActionUiPort, LoadSpacesPort, ShowSettingsUiPort, TriggerActionUi
       width: 250px;
       border: 1px solid blue;
     }
+
     .space {
       padding: 1rem .5rem;
       display: flex;
@@ -26,9 +27,10 @@ export class SpacesComponent {
   constructor(
     private readonly handleActionUseCase: HandleActionUiPort,
     private readonly triggerActionUseCase: TriggerActionUiPort,
-    private readonly loadSpacesUseCase: LoadSpacesPort,
+    private readonly loadSpacesUseCase: LoadSpacesUiPort,
     private readonly showSettingsUseCase: ShowSettingsUiPort
-  ) {}
+  ) {
+  }
 
   showSpacesSettings() {
     this.showSettingsUseCase.showSettings();

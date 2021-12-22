@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
-import { SettingsStateModel } from '../../domain';
-import { SettingsType } from '../../domain/settings-type';
+import { BehaviorSubject, ReplaySubject } from 'rxjs';
+import { SettingsState, SettingsType } from '../../domain';
 import { SettingsDataPort } from '../../use-cases';
-import {SettingsApi} from "../../ui/settings.api";
+import { SettingsApi } from '../../ui';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({providedIn: 'root'})
 export class SettingsStoreService implements SettingsDataPort, SettingsApi {
-  readonly initialState: SettingsStateModel = {
+  readonly initialState: SettingsState = {
     history: [],
     lastAction: '',
   };
@@ -15,12 +14,12 @@ export class SettingsStoreService implements SettingsDataPort, SettingsApi {
   private readonly _activeMenu$ = new ReplaySubject<SettingsType | null>(1);
   readonly activeMenu$ = this._activeMenu$.asObservable();
 
-  readonly settingsState$ = new BehaviorSubject<SettingsStateModel>(
+  readonly settingsState$ = new BehaviorSubject<SettingsState>(
     this.initialState
   );
 
   writeAction(action: string): void {
-    this.settingsState$.next({ history: [...this.settingsState$.getValue().history, action], lastAction: action });
+    this.settingsState$.next({history: [...this.settingsState$.getValue().history, action], lastAction: action});
     this.showSettings(null);
   }
 

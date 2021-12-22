@@ -1,7 +1,7 @@
 import { SettingsApi } from '../../settings/ui/settings.api';
 import {
   HandleActionUiPort,
-  HandleActionUseCase, LoadSpacesPort, LoadSpacesUseCase, ShowSettingsUiPort, ShowSettingsUseCase,
+  HandleActionUseCase, LoadSpacesUiPort, LoadSpacesUseCase, ShowSettingsUiPort, ShowSettingsUseCase,
   TriggerActionUiPort,
   TriggerActionUseCase,
 } from '../use-cases';
@@ -16,14 +16,18 @@ export const INFRASTRUCTURE_PROVIDERS = [
 ];
 
 export const APPLICATION_PROVIDERS = [
-  { provide: TriggerActionUiPort, useExisting: TriggerActionUseCase, deps: [SpacesDataPort], },
+  {
+    provide: TriggerActionUiPort,
+    useExisting: TriggerActionUseCase,
+    deps: [SpacesDataPort],
+  },
   {
     provide: HandleActionUiPort,
     useExisting: HandleActionUseCase,
     deps: [SpacesDataPort],
   },
   {
-    provide: LoadSpacesPort,
+    provide: LoadSpacesUiPort,
     useExisting: LoadSpacesUseCase,
     deps: [SpacesDataPort]
   },

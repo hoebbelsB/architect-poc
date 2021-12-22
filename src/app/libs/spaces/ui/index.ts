@@ -1,1 +1,1 @@
-export * from './ui.module';
+export * from './spaces-ui.module';
