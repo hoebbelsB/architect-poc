@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/sidebar/use-cases",
+  "sourceRoot": "libs/sidebar/use-cases/src",
+  "prefix": "architect-poc",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/sidebar/use-cases"],
+      "options": {
+        "jestConfig": "libs/sidebar/use-cases/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/sidebar/use-cases/src/**/*.ts",
+          "libs/sidebar/use-cases/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:sidebar"]
+}
