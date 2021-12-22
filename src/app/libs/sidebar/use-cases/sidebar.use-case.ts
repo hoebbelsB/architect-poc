@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { SidebarDataPort } from './ports/infrastructure/sidebar-data.port';
-import { ShowSettingsUiPort } from './ports/ui/show-settings-ui.port';
+import { SidebarUiPort } from './ports/ui/sidebar-ui.port';
 
-@Injectable({ providedIn: 'root' })
-export class ShowSettingsUseCase implements ShowSettingsUiPort {
-
+@Injectable({providedIn: 'root'})
+export class SidebarUseCase implements SidebarUiPort {
   constructor(private sidebarStore: SidebarDataPort) { }
 
   showSettings() {

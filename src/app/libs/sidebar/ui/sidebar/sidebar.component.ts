@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ShowSettingsUiPort } from '../../use-cases';
+import { SidebarUiPort } from '../../use-cases';
 
 @Component({
   selector: 'app-sidebar',
@@ -14,10 +14,10 @@ import { ShowSettingsUiPort } from '../../use-cases';
 })
 export class SidebarComponent {
   constructor(
-    private showSettingsUseCase: ShowSettingsUiPort
+    private sidebarUseCase: SidebarUiPort
   ) { }
 
   showSettings() {
-    this.showSettingsUseCase.showSettings();
+    this.sidebarUseCase.showSettings();
   }
 }

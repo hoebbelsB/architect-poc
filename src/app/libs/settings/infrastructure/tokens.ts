@@ -1,9 +1,5 @@
 import {
-  HandleActionUiPort,
-  HandleActionUseCase,
-  SettingsDataPort,
-  ShowMenuUiPort,
-  ShowMenuUseCase
+  SettingsDataPort, SettingsUiPort, SettingsUseCase,
 } from '../use-cases';
 import { SettingsStoreService } from './store/settings-store.service';
 import { SettingsApi } from '../ui';
@@ -21,13 +17,8 @@ export const INFRASTRUCTURE_PROVIDERS = [
 
 export const APPLICATION_PROVIDERS = [
   {
-    provide: HandleActionUiPort,
-    useExisting: HandleActionUseCase,
+    provide: SettingsUiPort,
+    useExisting: SettingsUseCase,
     deps: [SettingsDataPort],
   },
-  {
-    provide: ShowMenuUiPort,
-    useExisting: ShowMenuUseCase,
-    deps: [SettingsDataPort]
-  }
 ];
