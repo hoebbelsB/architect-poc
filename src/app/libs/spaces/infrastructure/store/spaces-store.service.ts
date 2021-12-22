@@ -10,7 +10,7 @@ export class SpacesStoreService implements SpacesDataPort {
 
 
   getSpaces(): Observable<Space[]> {
-    return of(new Array(50).fill(0).map((_, i) => ({
+    return of(new Array(10).fill(0).map((_, i) => ({
       id: `${i}`,
       name: `space no ${i}`
     })));
