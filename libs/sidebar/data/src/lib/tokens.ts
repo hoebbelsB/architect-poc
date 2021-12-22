@@ -1,4 +1,4 @@
-import { SidebarDataPort, SidebarUiPort, SidebarUseCase } from '../use-cases';
+import { SidebarDataPort, SidebarUiPort, SidebarUseCase } from '@architect-poc/sidebar/use-cases';
 import { SidebarStoreService } from './sidebar-store.service';
 
 export const DATA_PROVIDERS = [

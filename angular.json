@@ -204,6 +204,110 @@
         }
       },
       "tags": ["scope:dashboards"]
+    },
+    "sidebar-data": {
+      "projectType": "library",
+      "root": "libs/sidebar/data",
+      "sourceRoot": "libs/sidebar/data/src",
+      "prefix": "architect-poc",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/sidebar/data"],
+          "options": {
+            "jestConfig": "libs/sidebar/data/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/sidebar/data/src/**/*.ts",
+              "libs/sidebar/data/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["scope:sidebar"]
+    },
+    "sidebar-domain": {
+      "projectType": "library",
+      "root": "libs/sidebar/domain",
+      "sourceRoot": "libs/sidebar/domain/src",
+      "prefix": "architect-poc",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/sidebar/domain"],
+          "options": {
+            "jestConfig": "libs/sidebar/domain/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/sidebar/domain/src/**/*.ts",
+              "libs/sidebar/domain/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["scope:sidebar"]
+    },
+    "sidebar-public-ui": {
+      "projectType": "library",
+      "root": "libs/sidebar/public/ui",
+      "sourceRoot": "libs/sidebar/public/ui/src",
+      "prefix": "architect-poc",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/sidebar/public/ui"],
+          "options": {
+            "jestConfig": "libs/sidebar/public/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/sidebar/public/ui/src/**/*.ts",
+              "libs/sidebar/public/ui/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["scope:shared"]
+    },
+    "sidebar-use-cases": {
+      "projectType": "library",
+      "root": "libs/sidebar/use-cases",
+      "sourceRoot": "libs/sidebar/use-cases/src",
+      "prefix": "architect-poc",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/sidebar/use-cases"],
+          "options": {
+            "jestConfig": "libs/sidebar/use-cases/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/sidebar/use-cases/src/**/*.ts",
+              "libs/sidebar/use-cases/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["scope:sidebar"]
     }
   }
 }

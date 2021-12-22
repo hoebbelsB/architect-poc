@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { DashboardsModule } from '@architect-poc/dashboards/public/ui';
 
 import { AppComponent } from './app.component';
-import { SidebarModule } from './libs/sidebar/sidebar.module';
+import { SidebarModule } from '@architect-poc/sidebar/public/ui';
 import { SpacesModule } from './libs/spaces/spaces.module';
 import { SettingsModule } from './libs/settings/settings.module';
 

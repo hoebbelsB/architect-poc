@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
+import { SidebarDataPort } from '@architect-poc/sidebar/use-cases';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { SettingsApi, SettingsType } from '../../settings/public/interfaces/index';
-import { SidebarDataPort } from '../use-cases';
+import { SettingsApi, SettingsType } from '../../../../../apps/architect-poc/src/app/libs/settings/public/interfaces/index';
 
 @Injectable({
   providedIn: 'root'
