@@ -1,4 +1,4 @@
-import { SidebarDataPort, ShowSettingsUiPort, ShowSettingsUseCase } from '../use-cases';
+import { SidebarDataPort, SidebarUiPort, SidebarUseCase } from '../use-cases';
 import { SidebarStoreService } from './sidebar-store.service';
 
 export const INFRASTRUCTURE_PROVIDERS = [
@@ -10,8 +10,8 @@ export const INFRASTRUCTURE_PROVIDERS = [
 
 export const APPLICATION_PROVIDERS = [
   {
-    provide: ShowSettingsUiPort,
-    useExisting: ShowSettingsUseCase,
+    provide: SidebarUiPort,
+    useExisting: SidebarUseCase,
     deps: [SidebarDataPort],
   }
 ];

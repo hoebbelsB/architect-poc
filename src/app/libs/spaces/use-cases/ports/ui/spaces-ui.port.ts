@@ -3,6 +3,9 @@ import { Observable } from 'rxjs';
 import { Space } from '../../../domain';
 
 @Injectable()
-export abstract class LoadSpacesUiPort {
+export abstract class SpacesUiPort {
+  abstract getActionData(): Observable<string>;
   abstract loadSpaces(): Observable<Space[]>;
+  abstract showSettings(): void;
+  abstract triggerClearHistory(): void;
 }
