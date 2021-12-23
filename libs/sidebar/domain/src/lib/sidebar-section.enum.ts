@@ -3,5 +3,5 @@ export enum SidebarSection {
   FAVORITES = 'favorites',
   SPACES = 'spaces',
   DASHBOARDS = 'dashboards',
-  DOCS = 'docs'
+  DOCS = 'docs',
 }

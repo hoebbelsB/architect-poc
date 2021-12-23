@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { DashboardsDataPort } from './ports/data/dashboards-data.port';
 import { DashboardsUiPort } from './ports/ui/dashboards-ui.port';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class DashboardsUseCase implements DashboardsUiPort {
   constructor(private readonly localState: DashboardsDataPort) {}
 

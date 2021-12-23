@@ -13,8 +13,48 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
+                "sourceTag": "scope:shared",
+                "onlyDependOnLibsWithTags": ["scope:shared"]
+              },
+              {
+                "sourceTag": "scope:dashboards",
+                "onlyDependOnLibsWithTags": ["scope:dashboards", "scope:shared"]
+              },
+              {
+                "sourceTag": "scope:settings",
+                "onlyDependOnLibsWithTags": ["scope:settings", "scope:shared"]
+              },
+              {
+                "sourceTag": "scope:sidebar",
+                "onlyDependOnLibsWithTags": ["scope:sidebar", "scope:shared"]
+              },
+              {
+                "sourceTag": "scope:spaces",
+                "onlyDependOnLibsWithTags": ["scope:spaces", "scope:shared"]
+              },
+              {
+                "sourceTag": "type:ui",
+                "onlyDependOnLibsWithTags": ["type:use-cases", "type:domain"]
+              },
+              {
+                "sourceTag": "type:use-cases",
+                "onlyDependOnLibsWithTags": ["type:domain"]
+              },
+              {
+                "sourceTag": "type:data",
+                "onlyDependOnLibsWithTags": [
+                  "type:domain",
+                  "type:interfaces",
+                  "type:use-cases"
+                ]
+              },
+              {
+                "sourceTag": "type:interfaces",
+                "onlyDependOnLibsWithTags": ["type:domain"]
+              },
+              {
+                "sourceTag": "type:domain",
+                "onlyDependOnLibsWithTags": ["type:domain"]
               }
             ]
           }

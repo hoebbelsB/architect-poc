@@ -8,14 +8,10 @@ import { SidebarUiModule } from './sidebar-ui.module';
   providers: [],
 })
 export class SidebarModule {
-
   static forRoot(): ModuleWithProviders<SidebarModule> {
     return {
       ngModule: SidebarModule,
-      providers: [
-        ...DATA_PROVIDERS,
-        ...UI_PROVIDERS,
-      ],
+      providers: [...DATA_PROVIDERS, ...UI_PROVIDERS],
     };
   }
 }

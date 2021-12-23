@@ -10,12 +10,10 @@ import { SidebarUiPort } from '@architect-poc/sidebar/use-cases';
     <app-spaces></app-spaces>
     <app-dashboards></app-dashboards>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SidebarComponent {
-  constructor(
-    private sidebarUseCase: SidebarUiPort
-  ) { }
+  constructor(private sidebarUseCase: SidebarUiPort) {}
 
   showSettings() {
     this.sidebarUseCase.showSettings();

@@ -4,7 +4,7 @@ import { SettingsApi } from '@architect-poc/settings/public/interfaces';
 import { SettingsDataPort } from '@architect-poc/settings/use-cases';
 import { BehaviorSubject, ReplaySubject } from 'rxjs';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class SettingsStoreService implements SettingsDataPort, SettingsApi {
   readonly initialState: SettingsState = {
     history: [],
@@ -19,7 +19,10 @@ export class SettingsStoreService implements SettingsDataPort, SettingsApi {
   );
 
   writeAction(action: string): void {
-    this.settingsState$.next({history: [...this.settingsState$.getValue().history, action], lastAction: action});
+    this.settingsState$.next({
+      history: [...this.settingsState$.getValue().history, action],
+      lastAction: action,
+    });
     this.showSettings(null);
   }
 
@@ -30,5 +33,4 @@ export class SettingsStoreService implements SettingsDataPort, SettingsApi {
   showSettings(type: SettingsType | null): void {
     this._activeMenu$.next(type);
   }
-
 }

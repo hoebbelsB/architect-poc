@@ -4,11 +4,9 @@ import { Space } from '@architect-poc/spaces/domain';
 import { SpacesDataPort } from './ports/data/spaces-data.port';
 import { SpacesUiPort } from './ports/ui/spaces-ui.port';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class SpacesUseCase implements SpacesUiPort {
-  constructor(
-    private readonly spacesDataPort: SpacesDataPort,
-  ) {}
+  constructor(private readonly spacesDataPort: SpacesDataPort) {}
 
   getActionData(): Observable<string> {
     return this.spacesDataPort.getAction();

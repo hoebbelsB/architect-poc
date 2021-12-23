@@ -1,3 +1,1 @@
-export interface SpacesState {
-
-}
+export interface SpacesState {}

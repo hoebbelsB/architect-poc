@@ -1,20 +1,25 @@
-import { ChangeDetectionStrategy, Component, NgModule, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  NgModule,
+  OnInit,
+} from '@angular/core';
 
 @Component({
   selector: 'button-component',
   template: `<div>I'm a button</div>`,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent implements OnInit {
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 }
 
 const exports = [ButtonComponent];
 
 @NgModule({
   declarations: exports,
-  exports
+  exports,
 })
 export class ButtonComponentModule {}

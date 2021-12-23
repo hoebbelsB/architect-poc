@@ -12,14 +12,11 @@ export class SettingsComponent {
 
   readonly SettingsType = SettingsType;
 
-  constructor(
-    private readonly settingsUseCase: SettingsUiPort,
-  ) {
-    this.activeMenu$.subscribe(m => console.log('activeMenu', m))
+  constructor(private readonly settingsUseCase: SettingsUiPort) {
+    this.activeMenu$.subscribe((m) => console.log('activeMenu', m));
   }
 
   triggerAction(action: string): void {
     this.settingsUseCase.triggerAction(action);
   }
-
 }

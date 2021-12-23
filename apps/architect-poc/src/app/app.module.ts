@@ -8,17 +8,15 @@ import { SidebarModule } from '@architect-poc/sidebar/public/ui';
 import { SpacesModule } from '@architect-poc/spaces/public/ui';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     SpacesModule.forRoot(),
     SettingsModule.forRoot(),
     SidebarModule.forRoot(),
-    DashboardsModule.forRoot()
+    DashboardsModule.forRoot(),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
