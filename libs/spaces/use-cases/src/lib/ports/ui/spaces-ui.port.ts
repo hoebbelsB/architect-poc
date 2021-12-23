@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Space } from '../../../../../domain/src/lib/index';
+import { Space } from '@architect-poc/spaces/domain';
 
 @Injectable()
 export abstract class SpacesUiPort {

@@ -34,7 +34,7 @@
               },
               {
                 "sourceTag": "type:ui",
-                "onlyDependOnLibsWithTags": ["type:use-cases", "type:domain"]
+                "onlyDependOnLibsWithTags": ["type:use-cases", "type:domain", "type:ui"]
               },
               {
                 "sourceTag": "type:use-cases",
