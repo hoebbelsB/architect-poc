@@ -2,7 +2,7 @@
 <div class="dashboards-list">
   <div *ngFor="let dashboard of dashboards$ | async;"
        class="dashboard">
-    <span>{{ dashboard.name }}</span>
+    <a [routerLink]="['/dashboard']">{{ dashboard.name }}</a>
     <button (click)="showDashboardSettings()">toggle menu</button>
   </div>
 </div>

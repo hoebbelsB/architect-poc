@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 import { DashboardsModule } from '@architect-poc/dashboards/public/ui';
 import { SettingsModule } from '@architect-poc/settings/public/ui';
 
@@ -8,17 +9,36 @@ import { SidebarModule } from '@architect-poc/sidebar/public/ui';
 import { SpacesModule } from '@architect-poc/spaces/public/ui';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     SpacesModule.forRoot(),
     SettingsModule.forRoot(),
     SidebarModule.forRoot(),
-    DashboardsModule.forRoot()
+    DashboardsModule.forRoot(),
+    RouterModule.forRoot([
+      {
+        path: '',
+        redirectTo: 'dashboard',
+        pathMatch: 'full',
+      },
+      {
+        path: 'dashboard',
+        loadChildren: () =>
+          import('@architect-poc/dashboards/public/ui').then(
+            (m) => m.DashboardComponentModule
+          ),
+      },
+      {
+        path: 'space',
+        loadChildren: () =>
+          import('@architect-poc/spaces/public/ui').then(
+            (m) => m.SpaceComponentModule
+          ),
+      },
+    ]),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
