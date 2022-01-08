@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'settings-public-ui',
-  preset: '../../../../jest.preset.js',
+  displayName: 'settings-public-ui-feature-settings-modal',
+  preset: '../../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -8,7 +8,8 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../../coverage/libs/settings/public/ui',
+  coverageDirectory:
+    '../../../../../coverage/libs/settings/public/ui/feature-settings-modal',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

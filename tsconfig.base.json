@@ -52,6 +52,12 @@
       "@architect-poc/settings/public/ui": [
         "libs/settings/public/ui/src/index.ts"
       ],
+      "@architect-poc/settings/public/ui/feature-settings-modal": [
+        "libs/settings/public/ui/feature-settings-modal/src/index.ts"
+      ],
+      "@architect-poc/settings/public/ui/shared": [
+        "libs/settings/public/ui/shared/src/index.ts"
+      ],
       "@architect-poc/settings/use-cases": [
         "libs/settings/use-cases/src/index.ts"
       ],

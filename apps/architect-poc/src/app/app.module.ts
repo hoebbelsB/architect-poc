@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { DashboardsInterfacesModule } from '@architect-poc/dashboards/public/interfaces';
-import { SettingsModule } from '@architect-poc/settings/public/ui';
+import { SettingsInterfacesModule } from '@architect-poc/settings/public/interfaces';
 
 import { AppComponent } from './app.component';
 import { SidebarModule } from '@architect-poc/sidebar/public/ui';
@@ -13,7 +13,7 @@ import { SpacesModule } from '@architect-poc/spaces/public/ui';
   imports: [
     BrowserModule,
     SpacesModule.forRoot(),
-    SettingsModule.forRoot(),
+    SettingsInterfacesModule.forRoot(),
     SidebarModule.forRoot(),
     DashboardsInterfacesModule.forRoot(),
     RouterModule.forRoot([
