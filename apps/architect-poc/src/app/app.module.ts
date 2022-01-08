@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { DashboardsModule } from '@architect-poc/dashboards/public/ui';
+import { DashboardsInterfacesModule } from '@architect-poc/dashboards/public/interfaces';
 import { SettingsModule } from '@architect-poc/settings/public/ui';
 
 import { AppComponent } from './app.component';
@@ -15,7 +15,7 @@ import { SpacesModule } from '@architect-poc/spaces/public/ui';
     SpacesModule.forRoot(),
     SettingsModule.forRoot(),
     SidebarModule.forRoot(),
-    DashboardsModule.forRoot(),
+    DashboardsInterfacesModule.forRoot(),
     RouterModule.forRoot([
       {
         path: '',
@@ -25,9 +25,9 @@ import { SpacesModule } from '@architect-poc/spaces/public/ui';
       {
         path: 'dashboard',
         loadChildren: () =>
-          import('@architect-poc/dashboards/public/ui').then(
-            (m) => m.DashboardComponentModule
-          ),
+          import(
+            '@architect-poc/dashboards/public/ui/feature-dashboard-view'
+          ).then((m) => m.FeatureDashboardViewModule),
       },
       {
         path: 'space',

@@ -19,12 +19,12 @@ import { RouterModule } from '@angular/router';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DashboardComponent {}
+export class DashboardViewComponent {}
 
 @NgModule({
-  declarations: [DashboardComponent],
+  declarations: [DashboardViewComponent],
   imports: [
-    RouterModule.forChild([{ path: '', component: DashboardComponent }]),
+    RouterModule.forChild([{ path: '', component: DashboardViewComponent }]),
   ],
 })
-export class DashboardComponentModule {}
+export class FeatureDashboardViewModule {}

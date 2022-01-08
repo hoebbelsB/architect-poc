@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'dashboards-public-ui',
-  preset: '../../../../jest.preset.js',
+  displayName: 'dashboards-public-ui-feature-dashboard-list',
+  preset: '../../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -8,7 +8,8 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../../coverage/libs/dashboards/public/ui',
+  coverageDirectory:
+    '../../../../../coverage/libs/dashboards/public/ui/feature-dashboard-list',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

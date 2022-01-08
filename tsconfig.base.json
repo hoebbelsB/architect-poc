@@ -23,8 +23,20 @@
       "@architect-poc/dashboards/domain": [
         "libs/dashboards/domain/src/index.ts"
       ],
+      "@architect-poc/dashboards/public/interfaces": [
+        "libs/dashboards/public/interfaces/src/index.ts"
+      ],
       "@architect-poc/dashboards/public/ui": [
         "libs/dashboards/public/ui/src/index.ts"
+      ],
+      "@architect-poc/dashboards/public/ui/feature-dashboard-list": [
+        "libs/dashboards/public/ui/feature-dashboard-list/src/index.ts"
+      ],
+      "@architect-poc/dashboards/public/ui/feature-dashboard-view": [
+        "libs/dashboards/public/ui/feature-dashboard-view/src/index.ts"
+      ],
+      "@architect-poc/dashboards/public/ui/shared": [
+        "libs/dashboards/public/ui/shared/src/index.ts"
       ],
       "@architect-poc/dashboards/use-cases": [
         "libs/dashboards/use-cases/src/index.ts"
