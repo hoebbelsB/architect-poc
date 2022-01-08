@@ -3,18 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { DashboardsInterfacesModule } from '@architect-poc/dashboards/public/interfaces';
 import { SettingsInterfacesModule } from '@architect-poc/settings/public/interfaces';
+import { SidebarInterfacesModule } from '@architect-poc/sidebar/public/interfaces';
+import { FeatureSidebarModule } from '@architect-poc/sidebar/public/ui/feature-sidebar';
+import { SpacesInterfacesModule } from '@architect-poc/spaces/public/interfaces';
 
 import { AppComponent } from './app.component';
-import { SidebarModule } from '@architect-poc/sidebar/public/ui';
-import { SpacesModule } from '@architect-poc/spaces/public/ui';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    SpacesModule.forRoot(),
+    SpacesInterfacesModule.forRoot(),
     SettingsInterfacesModule.forRoot(),
-    SidebarModule.forRoot(),
+    SidebarInterfacesModule.forRoot(),
     DashboardsInterfacesModule.forRoot(),
     RouterModule.forRoot([
       {
@@ -32,11 +33,12 @@ import { SpacesModule } from '@architect-poc/spaces/public/ui';
       {
         path: 'space',
         loadChildren: () =>
-          import('@architect-poc/spaces/public/ui').then(
-            (m) => m.SpaceComponentModule
+          import('@architect-poc/spaces/public/ui/feature-spaces-view').then(
+            (m) => m.FeatureSpaceListModule
           ),
       },
     ]),
+    FeatureSidebarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
