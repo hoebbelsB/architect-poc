@@ -1,5 +1,9 @@
-import { SettingsApi } from '@architect-poc/settings/public/interfaces';
-import { SettingsUseCase, SettingsDataPort, SettingsUiPort } from '@architect-poc/settings/use-cases';
+import { SettingsApi } from './settings-api';
+import {
+  SettingsUseCase,
+  SettingsDataPort,
+  SettingsUiPort,
+} from '@architect-poc/settings/use-cases';
 import { SettingsStoreService } from './store/settings-store.service';
 
 export const DATA_PROVIDERS = [
@@ -10,7 +14,7 @@ export const DATA_PROVIDERS = [
   {
     provide: SettingsApi,
     useExisting: SettingsStoreService,
-  }
+  },
 ];
 
 export const UI_PROVIDERS = [
