@@ -1,8 +1,0 @@
-<h3>Dashboards List</h3>
-<div class="dashboards-list">
-  <div *ngFor="let dashboard of dashboards$ | async;"
-       class="dashboard">
-    <span>{{ dashboard.name }}</span>
-    <button (click)="showDashboardSettings()">toggle menu</button>
-  </div>
-</div>

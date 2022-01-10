@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/sidebar/public/ui/shared",
+  "sourceRoot": "libs/sidebar/public/ui/shared/src",
+  "prefix": "architect-poc",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/sidebar/public/ui/shared"],
+      "options": {
+        "jestConfig": "libs/sidebar/public/ui/shared/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/sidebar/public/ui/shared/src/**/*.ts",
+          "libs/sidebar/public/ui/shared/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
