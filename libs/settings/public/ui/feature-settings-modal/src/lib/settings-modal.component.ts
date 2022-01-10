@@ -1,25 +1,25 @@
 import { CommonModule } from '@angular/common';
 import { Component, NgModule } from '@angular/core';
 import { ButtonComponentModule } from '@architect-poc/design-system/public/ui';
-import { SettingsUiPort } from '@architect-poc/settings/use-cases';
 import { SettingsType } from '@architect-poc/settings/domain';
+import { SettingsAdapter } from '@architect-poc/settings/use-cases';
 
 @Component({
   selector: 'app-settings',
   templateUrl: './settings-modal.component.html',
 })
 export class SettingsModalComponent {
-  readonly history$ = this.settingsUseCase.actionHistory$;
-  readonly activeMenu$ = this.settingsUseCase.activeMenu$;
+  readonly history$ = this.settingsAdapter.actionHistory$;
+  readonly activeMenu$ = this.settingsAdapter.activeMenu$;
 
   readonly SettingsType = SettingsType;
 
-  constructor(private readonly settingsUseCase: SettingsUiPort) {
+  constructor(private readonly settingsAdapter: SettingsAdapter) {
     this.activeMenu$.subscribe((m) => console.log('activeMenu', m));
   }
 
   triggerAction(action: string): void {
-    this.settingsUseCase.triggerAction(action);
+    this.settingsAdapter.triggerAction(action);
   }
 }
 

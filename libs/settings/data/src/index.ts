@@ -1,2 +1,2 @@
 export * from './lib/tokens';
-export { SettingsApi } from './lib/settings-api';
+export { SettingsSharedState } from './lib/settings-api';

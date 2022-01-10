@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { SettingsState, SettingsType } from '@architect-poc/settings/domain';
-import { SettingsApi } from '../settings-api';
-import { SettingsDataPort } from '@architect-poc/settings/use-cases';
+import { SettingsSharedState } from '../settings-api';
+import { SettingsGlobalState } from '@architect-poc/settings/use-cases';
 import { BehaviorSubject, ReplaySubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
-export class SettingsStoreService implements SettingsDataPort, SettingsApi {
+export class SettingsStoreService
+  implements SettingsGlobalState, SettingsSharedState
+{
   readonly initialState: SettingsState = {
     history: [],
     lastAction: '',

@@ -1,20 +1,17 @@
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { SettingsDataPort } from './ports/data/settings-data.port';
-import { SettingsUiPort } from './ports/ui/settings-ui.port';
+import { SettingsGlobalState } from './ports/data/settings-data.port';
 
-@Injectable({providedIn: 'root'})
-export class SettingsUseCase implements SettingsUiPort {
+@Injectable({ providedIn: 'root' })
+export class SettingsAdapter {
+  actionHistory$ = this.globalState.settingsState$.pipe(
+    map(({ history }) => history)
+  );
+  activeMenu$ = this.globalState.activeMenu$;
 
-  actionHistory$ = this.localState.settingsState$.pipe(map(({ history }) => history ));
-  activeMenu$ = this.localState.activeMenu$;
-
-  constructor(
-    private readonly localState: SettingsDataPort,
-  ) {}
+  constructor(private readonly globalState: SettingsGlobalState) {}
 
   triggerAction(action: string): void {
-    this.localState.writeAction(action);
+    this.globalState.writeAction(action);
   }
-
 }
