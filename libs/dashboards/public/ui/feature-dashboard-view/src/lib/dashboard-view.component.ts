@@ -2,7 +2,6 @@ import {
   ChangeDetectionStrategy,
   Component,
   NgModule,
-  OnInit,
 } from '@angular/core';
 import { RouterModule } from '@angular/router';
 

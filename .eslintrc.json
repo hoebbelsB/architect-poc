@@ -17,20 +17,36 @@
                 "onlyDependOnLibsWithTags": ["scope:shared"]
               },
               {
-                "sourceTag": "scope:dashboards",
+                "sourceTag": "scope:dashboards-shared",
                 "onlyDependOnLibsWithTags": ["scope:dashboards", "scope:shared"]
               },
               {
-                "sourceTag": "scope:settings",
+                "sourceTag": "scope:spaces-shared",
+                "onlyDependOnLibsWithTags": ["scope:spaces", "scope:shared"]
+              },
+              {
+                "sourceTag": "scope:settings-shared",
                 "onlyDependOnLibsWithTags": ["scope:settings", "scope:shared"]
               },
               {
-                "sourceTag": "scope:sidebar",
+                "sourceTag": "scope:sidebar-shared",
                 "onlyDependOnLibsWithTags": ["scope:sidebar", "scope:shared"]
               },
               {
+                "sourceTag": "scope:dashboards",
+                "onlyDependOnLibsWithTags": ["scope:dashboards", "scope:sidebar-shared", "scope:settings-shared", "scope:spaces-shared", "scope:shared"]
+              },
+              {
+                "sourceTag": "scope:settings",
+                "onlyDependOnLibsWithTags": ["scope:settings", "scope:sidebar-shared", "scope:spaces-shared", "scope:dashboards-shared", "scope:shared"]
+              },
+              {
+                "sourceTag": "scope:sidebar",
+                "onlyDependOnLibsWithTags": ["scope:sidebar", "scope:settings-shared", "scope:spaces-shared", "scope:dashboards-shared", "scope:shared"]
+              },
+              {
                 "sourceTag": "scope:spaces",
-                "onlyDependOnLibsWithTags": ["scope:spaces", "scope:shared"]
+                "onlyDependOnLibsWithTags": ["scope:spaces", "scope:sidebar-shared", "scope:settings-shared", "scope:dashboards-shared", "scope:shared"]
               },
               {
                 "sourceTag": "type:ui",
@@ -44,13 +60,14 @@
                 "sourceTag": "type:data",
                 "onlyDependOnLibsWithTags": [
                   "type:domain",
-                  "type:interfaces",
-                  "type:use-cases"
+                  "type:data",
+                  "type:use-cases",
+                  "type:interfaces"
                 ]
               },
               {
                 "sourceTag": "type:interfaces",
-                "onlyDependOnLibsWithTags": ["type:domain"]
+                "onlyDependOnLibsWithTags": ["type:domain", "type:data", "type:interfaces", "type:use-cases"]
               },
               {
                 "sourceTag": "type:domain",

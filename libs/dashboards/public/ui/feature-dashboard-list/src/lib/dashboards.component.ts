@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { DashboardsUiPort } from '@architect-poc/dashboards/use-cases';
 
 @Component({
-  selector: 'app-dashboards',
+  selector: 'architect-poc-dashboards',
   templateUrl: './dashboards.component.html',
   styles: [
     `
