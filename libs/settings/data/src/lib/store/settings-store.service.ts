@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { SettingsState, SettingsType } from '@architect-poc/settings/domain';
-import { SettingsApi } from '@architect-poc/settings/public/interfaces';
+import { SettingsApi } from '../settings-api';
 import { SettingsDataPort } from '@architect-poc/settings/use-cases';
 import { BehaviorSubject, ReplaySubject } from 'rxjs';
 

@@ -1,4 +1,4 @@
-import { SettingsApi } from '@architect-poc/settings/public/interfaces';
+import { SettingsApi } from './settings-api';
 import {
   SettingsUseCase,
   SettingsDataPort,
