@@ -1,1 +1,1 @@
-export * from './lib/settings-modal.component';
+export * from './lib/feature-settings-modal.component';

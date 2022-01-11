@@ -55,8 +55,8 @@
       "@architect-poc/settings/use-cases": [
         "libs/settings/use-cases/src/index.ts"
       ],
-      "@architect-poc/sidebar-public-feaure-sidebar": [
-        "libs/sidebar/public/feaure-sidebar/src/index.ts"
+      "@architect-poc/sidebar-public-feature-sidebar": [
+        "libs/sidebar/public/feature-sidebar/src/index.ts"
       ],
       "@architect-poc/sidebar-public-state": [
         "libs/sidebar/public/state/src/index.ts"
@@ -69,11 +69,11 @@
       "@architect-poc/sidebar/use-cases": [
         "libs/sidebar/use-cases/src/index.ts"
       ],
-      "@architect-poc/spaces-public-feaure-space-list": [
-        "libs/spaces/public/feaure-space-list/src/index.ts"
+      "@architect-poc/spaces-public-feature-space-list": [
+        "libs/spaces/public/feature-space-list/src/index.ts"
       ],
-      "@architect-poc/spaces-public-feaure-space-view": [
-        "libs/spaces/public/feaure-space-view/src/index.ts"
+      "@architect-poc/spaces-public-feature-space-view": [
+        "libs/spaces/public/feature-space-view/src/index.ts"
       ],
       "@architect-poc/spaces-public-state": [
         "libs/spaces/public/state/src/index.ts"

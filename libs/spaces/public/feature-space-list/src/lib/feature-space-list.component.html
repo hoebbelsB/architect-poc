@@ -1,0 +1,10 @@
+<div><strong>FeatureSpaceListComponent</strong></div>
+<span>{{ action$ | async }}</span>
+<button (click)="clearHistory()">Clear History</button>
+<h3>Spaces List</h3>
+<div class="spaces-list">
+  <div *ngFor="let space of spaces$ | async" class="space">
+    <a [routerLink]="['/space']">{{ space.name }}</a>
+    <button (click)="showSpacesSettings()">toggle menu</button>
+  </div>
+</div>

@@ -1,2 +1,2 @@
-export * from './lib/tokens';
-export { SettingsSharedFeatureState } from './lib/settings-shared.state';
+export * from './lib/store/settings.store';
+export * from './lib/store/settings-shared.store';

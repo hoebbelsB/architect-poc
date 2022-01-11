@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Dashboard } from '@architect-poc/dashboards/domain';
-import { DashboardFeatureState } from '@architect-poc/dashboards/use-cases';
 import {
-  SettingsSharedFeatureState,
+  SettingsSharedStore,
   SettingsType,
 } from '@architect-poc/settings-public-state';
 import { Observable } from 'rxjs';
 import { DashboardResource } from '../resource/dashboard.resource';
 
 @Injectable({ providedIn: 'root' })
-export class DashboardsStore implements DashboardFeatureState {
+export class DashboardsStore {
   constructor(
-    private readonly settingsState: SettingsSharedFeatureState,
+    private readonly settingsStore: SettingsSharedStore,
     private readonly dashboardResource: DashboardResource
   ) {}
 
@@ -20,6 +19,6 @@ export class DashboardsStore implements DashboardFeatureState {
   }
 
   showDashboardSettings(): void {
-    this.settingsState.showSettings(SettingsType.DASHBOARDS);
+    this.settingsStore.showSettings(SettingsType.DASHBOARDS);
   }
 }

@@ -1,22 +1,21 @@
 import { Injectable } from '@angular/core';
 import {
-  SettingsSharedFeatureState,
+  SettingsSharedStore,
   SettingsType,
 } from '@architect-poc/settings-public-state';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Space } from '@architect-poc/spaces/domain';
-import { SpacesFeatureState } from '@architect-poc/spaces/use-cases';
 import { SpacesResource } from '../resource/spaces.resource';
 
 @Injectable({ providedIn: 'root' })
-export class SpacesStore implements SpacesFeatureState {
+export class SpacesStore {
   getSpaces(): Observable<Space[]> {
     return this.spacesResource.getSpaces();
   }
 
   constructor(
-    private readonly settingsStore: SettingsSharedFeatureState,
+    private readonly settingsStore: SettingsSharedStore,
     private readonly spacesResource: SpacesResource
   ) {}
 

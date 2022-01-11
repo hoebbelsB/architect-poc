@@ -4,8 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { DashboardsPublicStateModule } from '@architect-poc/dashboards-public-state';
 import { SettingsPublicStateModule } from '@architect-poc/settings-public-state';
+import { FeatureSidebarModule } from '@architect-poc/sidebar-public-feature-sidebar';
 import { SidebarPublicStateModule } from '@architect-poc/sidebar-public-state';
-import { FeatureSidebarModule } from '@architect-poc/sidebar-public-feaure-sidebar';
 import { SpacesPublicStateModule } from '@architect-poc/spaces-public-state';
 
 import { AppComponent } from './app.component';
@@ -35,7 +35,7 @@ import { AppComponent } from './app.component';
       {
         path: 'space',
         loadChildren: () =>
-          import('@architect-poc/spaces-public-feaure-space-view').then(
+          import('@architect-poc/spaces-public-feature-space-view').then(
             (m) => m.FeatureSpaceListModule
           ),
       },

@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { SettingsType } from '@architect-poc/settings/domain';
-import { SettingsSharedFeatureState } from '../settings-shared.state';
 import { SettingsStore } from './settings.store';
 
 @Injectable({ providedIn: 'root' })
-export class SettingsSharedStore implements SettingsSharedFeatureState {
+export class SettingsSharedStore {
   readonly settingsState$ = this.settingsStore.settingsState$;
 
   constructor(private readonly settingsStore: SettingsStore) {}

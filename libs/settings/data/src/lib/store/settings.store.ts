@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { SettingsState, SettingsType } from '@architect-poc/settings/domain';
-import { SettingsFeatureState } from '@architect-poc/settings/use-cases';
 import { BehaviorSubject, ReplaySubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
-export class SettingsStore implements SettingsFeatureState {
+export class SettingsStore {
   readonly initialState: SettingsState = {
     history: [],
     lastAction: '',
