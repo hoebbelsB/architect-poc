@@ -9,7 +9,7 @@ export class SettingsUseCase implements SettingsAdapter {
     map(({ history }) => history)
   );
   activeMenu$ = this.localState.activeMenu$;
-
+  menuItems$ = this.localState.menuItems$;
   constructor(private readonly localState: SettingsFeatureState) {}
 
   triggerAction(action: string): void {
