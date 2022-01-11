@@ -1,11 +1,11 @@
 /**
  * Ui Ports
  */
-export * from './lib/ports/ui/settings-ui.port';
+export * from './lib/ports/ui/settings.adapter';
 /**
  * Infrastructure Ports
  */
-export * from './lib/ports/data/settings-data.port';
+export * from './lib/ports/data/settings-feature.state';
 
 /**
  * Use Case implementations

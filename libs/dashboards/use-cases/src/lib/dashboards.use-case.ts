@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Dashboard } from '@architect-poc/dashboards/domain';
 import { Observable } from 'rxjs';
-import { DashboardsDataPort } from './ports/data/dashboards-data.port';
-import { DashboardsUiPort } from './ports/ui/dashboards-ui.port';
+import { DashboardFeatureState } from './ports/data/dashboard-feature.state';
+import { DashboardAdapter } from './ports/ui/dashboard.adapter';
 
-@Injectable({providedIn: 'root'})
-export class DashboardsUseCase implements DashboardsUiPort {
-  constructor(private readonly localState: DashboardsDataPort) {}
+@Injectable({ providedIn: 'root' })
+export class DashboardsUseCase implements DashboardAdapter {
+  constructor(private readonly localState: DashboardFeatureState) {}
 
   loadDashboards(): Observable<Dashboard[]> {
     return this.localState.getDashboards();

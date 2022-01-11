@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/spaces/public/feaure-space-list",
+  "sourceRoot": "libs/spaces/public/feaure-space-list/src",
+  "prefix": "architect-poc",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/spaces/public/feaure-space-list"],
+      "options": {
+        "jestConfig": "libs/spaces/public/feaure-space-list/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/spaces/public/feaure-space-list/src/**/*.ts",
+          "libs/spaces/public/feaure-space-list/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
