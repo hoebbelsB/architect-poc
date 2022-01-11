@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, NgModule } from '@angular/core';
-import { ButtonComponentModule } from '@architect-poc/design-system/public/ui';
+import { ButtonComponentModule, MenuItemComponentModule } from '@architect-poc/design-system/public/ui';
 import { SettingsType } from '@architect-poc/settings/domain';
 import { FeatureSettingsModalAdapter } from './feature-settings-modal.adapter';
 
@@ -11,7 +11,7 @@ import { FeatureSettingsModalAdapter } from './feature-settings-modal.adapter';
 export class FeatureSettingsModalComponent {
   readonly history$ = this.featureSettingsModalAdapter.actionHistory$;
   readonly activeMenu$ = this.featureSettingsModalAdapter.activeMenu$;
-
+  readonly menuItems$ = this.featureSettingsModalAdapter.menuItems$;
   readonly SettingsType = SettingsType;
 
   constructor(private readonly featureSettingsModalAdapter: FeatureSettingsModalAdapter) {
@@ -26,6 +26,6 @@ export class FeatureSettingsModalComponent {
 @NgModule({
   declarations: [FeatureSettingsModalComponent],
   exports: [FeatureSettingsModalComponent],
-  imports: [CommonModule, ButtonComponentModule],
+  imports: [CommonModule, ButtonComponentModule, MenuItemComponentModule],
 })
 export class FeatureSettingsModalModule {}
