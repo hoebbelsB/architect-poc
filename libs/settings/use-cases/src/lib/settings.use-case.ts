@@ -1,20 +1,18 @@
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { SettingsDataPort } from './ports/data/settings-data.port';
-import { SettingsUiPort } from './ports/ui/settings-ui.port';
+import { SettingsFeatureState } from './ports/data/settings-feature.state';
+import { SettingsAdapter } from './ports/ui/settings.adapter';
 
-@Injectable({providedIn: 'root'})
-export class SettingsUseCase implements SettingsUiPort {
-
-  actionHistory$ = this.localState.settingsState$.pipe(map(({ history }) => history ));
+@Injectable({ providedIn: 'root' })
+export class SettingsUseCase implements SettingsAdapter {
+  actionHistory$ = this.localState.settingsState$.pipe(
+    map(({ history }) => history)
+  );
   activeMenu$ = this.localState.activeMenu$;
 
-  constructor(
-    private readonly localState: SettingsDataPort,
-  ) {}
+  constructor(private readonly localState: SettingsFeatureState) {}
 
   triggerAction(action: string): void {
     this.localState.writeAction(action);
   }
-
 }

@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Space } from '@architect-poc/spaces/domain';
-import { SpacesDataPort } from './ports/data/spaces-data.port';
-import { SpacesUiPort } from './ports/ui/spaces-ui.port';
+import { SpacesFeatureState } from './ports/data/spaces-feature.state';
+import { SpacesAdapter } from './ports/ui/spaces.adapter';
 
-@Injectable({providedIn: 'root'})
-export class SpacesUseCase implements SpacesUiPort {
-  constructor(
-    private readonly spacesDataPort: SpacesDataPort,
-  ) {}
+@Injectable({ providedIn: 'root' })
+export class SpacesUseCase implements SpacesAdapter {
+  constructor(private readonly spacesDataPort: SpacesFeatureState) {}
 
   getActionData(): Observable<string> {
     return this.spacesDataPort.getAction();

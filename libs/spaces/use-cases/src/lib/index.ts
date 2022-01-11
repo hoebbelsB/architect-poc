@@ -1,11 +1,11 @@
 /**
  * Ui Ports
  */
-export * from './ports/ui/spaces-ui.port';
+export * from './ports/ui/spaces.adapter';
 /**
  * Infrastructure Ports
  */
-export * from './ports/data/spaces-data.port';
+export * from './ports/data/spaces-feature.state';
 
 /**
  * Use Case implementations

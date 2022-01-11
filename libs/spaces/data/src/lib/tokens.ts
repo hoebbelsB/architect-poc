@@ -1,19 +1,23 @@
-import { SettingsApi } from '@architect-poc/settings/public/interfaces';
-import { SpacesDataPort, SpacesUiPort, SpacesUseCase } from '@architect-poc/spaces/use-cases';
-import { SpacesStoreService } from './store/spaces-store.service';
+import { SettingsSharedFeatureState } from '@architect-poc/settings-public-state';
+import {
+  SpacesFeatureState,
+  SpacesAdapter,
+  SpacesUseCase,
+} from '@architect-poc/spaces/use-cases';
+import { SpacesStore } from './store/spaces.store';
 
 export const DATA_PROVIDERS = [
   {
-    provide: SpacesDataPort,
-    useExisting: SpacesStoreService,
-    deps: [SettingsApi]
+    provide: SpacesFeatureState,
+    useExisting: SpacesStore,
+    deps: [SettingsSharedFeatureState],
   },
 ];
 
 export const UI_PROVIDERS = [
   {
-    provide: SpacesUiPort,
+    provide: SpacesAdapter,
     useExisting: SpacesUseCase,
-    deps: [SpacesDataPort],
+    deps: [SpacesFeatureState],
   },
 ];

@@ -1,12 +1,12 @@
 /**
  * Ui Ports
  */
-export * from './ports/ui/sidebar-ui.port';
+export * from './ports/ui/sidebar.adapter';
 
 /**
  * Infrastructure Ports
  */
-export * from './ports/data/sidebar-data.port';
+export * from './ports/data/sidebar-feature.state';
 
 /**
  * Use Case implementations

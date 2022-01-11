@@ -1,20 +1,23 @@
-
-import { DashboardsDataPort, DashboardsUiPort, DashboardsUseCase } from '@architect-poc/dashboards/use-cases';
-import { SettingsApi } from '@architect-poc/settings/public/interfaces';
-import { DashboardsStoreService } from './store/dashboards-store.service';
+import {
+  DashboardFeatureState,
+  DashboardAdapter,
+  DashboardsUseCase,
+} from '@architect-poc/dashboards/use-cases';
+import { SettingsSharedFeatureState } from '@architect-poc/settings-public-state';
+import { DashboardsStore } from './store/dashboards.store';
 
 export const DATA_PROVIDERS = [
   {
-    provide: DashboardsDataPort,
-    useExisting: DashboardsStoreService,
-    deps: [SettingsApi]
-  }
+    provide: DashboardFeatureState,
+    useExisting: DashboardsStore,
+    deps: [SettingsSharedFeatureState],
+  },
 ];
 
 export const UI_PROVIDERS = [
   {
-    provide: DashboardsUiPort,
+    provide: DashboardAdapter,
     useExisting: DashboardsUseCase,
-    deps: [DashboardsDataPort]
-  }
+    deps: [DashboardFeatureState],
+  },
 ];

@@ -1,11 +1,11 @@
 /**
  * Ui Ports
  */
-export * from './ports/ui/dashboards-ui.port';
+export * from './ports/ui/dashboard.adapter';
 /**
  * Infrastructure Ports
  */
-export * from './ports/data/dashboards-data.port';
+export * from './ports/data/dashboard-feature.state';
 
 /**
  * Use Case implementations

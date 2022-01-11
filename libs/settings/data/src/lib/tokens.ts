@@ -1,26 +1,27 @@
-import { SettingsApi } from './settings-api';
+import { SettingsSharedFeatureState } from './settings-shared.state';
 import {
   SettingsUseCase,
-  SettingsDataPort,
-  SettingsUiPort,
+  SettingsFeatureState,
+  SettingsAdapter,
 } from '@architect-poc/settings/use-cases';
-import { SettingsStoreService } from './store/settings-store.service';
+import { SettingsSharedStore } from './store/settings-shared.store';
+import { SettingsStore } from './store/settings.store';
 
 export const DATA_PROVIDERS = [
   {
-    provide: SettingsDataPort,
-    useExisting: SettingsStoreService,
+    provide: SettingsFeatureState,
+    useExisting: SettingsStore,
   },
   {
-    provide: SettingsApi,
-    useExisting: SettingsStoreService,
+    provide: SettingsSharedFeatureState,
+    useExisting: SettingsSharedStore,
   },
 ];
 
 export const UI_PROVIDERS = [
   {
-    provide: SettingsUiPort,
+    provide: SettingsAdapter,
     useExisting: SettingsUseCase,
-    deps: [SettingsDataPort],
+    deps: [SettingsFeatureState],
   },
 ];

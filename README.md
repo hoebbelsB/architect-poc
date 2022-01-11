@@ -1,27 +1,128 @@
 # ArchitectPoc
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.4.
+This is a showcase project for a ddd macro architecture implemented with nx and angular.
 
-## Development server
+We have prepared two different approaches, each with different levels of abstraction.
+The level of abstraction is the main driver for _maintainability_, _DX_ and _code complexity_.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Extended Layered Architecture
 
-## Code scaffolding
+### Design Decisions & Patterns
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Focus on maximum inversion of control, level of abstraction and constraints.
 
-## Build
+* Separation of Concerns
+* Domain Driven Design
+* Layered Architecture
+* Adapter/Port Pattern
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+### Folder Structure and Constraints
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+dashboards/
+    *domain/
+        dashboard.model.ts
+    *data/
+      resource/
+        dashboard.resource.ts <-- domain // does actual http calls
+      store/
+        dashboard.store.ts <-- domain // implements @ddd/dashboard/use-cases `DashboardFeatureState`
+        dashboard-shared.store.ts <-- domain // implements @ddd/dashboard/data `DashboardSharedFeatureState`
+      dashboard-shared.state.ts // `DashboardSharedFeatureState` abstract class defining shared feature-state
+      tokens.ts // define tokens for: `DashboardFeatureState`, `DashboardSharedFeatureState`, `DashboardAdapter`
+      index.ts
+    *use-cases/
+      ports/
+        data/
+          dashboard-feature.state.ts // `DashboardFeatureState`
+        ui/
+          dashboard.adapter.ts // `DashboardAdapter`
+      dashboard-use-case.ts <-- @ddd/settings/public/state
+        // implements @ddd/dashboard/use-cases `DashboardAdapter`
+    public/
+        *state
+          public-dashboard-state.module.ts // `forRoot` defining @ddd/dashboard/data tokens.ts
+          index.ts  // re-export domain, shared state
 
-## Running end-to-end tests
+       *feature-list/
+           list/
+               feature-list.container.component.ts <-- @ddd/dashboard/uses-cases (`DashboardAdapter`)
+           feature-list-module.ts
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+       *feature-show/
+          show/
+            feature-show.component.ts <-- @ddd/dashboard/uses-cases (`DashboardAdapter`)
+          feature-show-module.ts
 
-## Further help
+       *ui/
+        components/
+          ui-dashboard-list.component.ts (display only)
+        patterns/
+        tokens/
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+| Metric           | ⭐ Rating |
+|------------------|----------|
+| maintainability  | ⭐        |
+| DX               | ⭐        |
+| code complexity  | ⭐        |
+
+## Simple Layered Architecture
+
+### Design Decisions & Patterns
+
+We focus on maximum developer speed by removing all abstraction layers.
+
+* Separation of Concerns
+* Domain Driven Design
+* (simplified) Layered Architecture
+
+* removed abstraction layer for `DashboardFeatureState`
+* removed abstraction layer for `DashboardSharedFeatureState`
+* removed `use-cases` library
+* removed `tokens` since not needed anylonger
+* moved `Adapter` logic directly to `Components`
+
+### Folder Structure and Constraints
+
+```
+dashboards/
+    *domain/
+        dashboard.model.ts
+    *data/
+      resource/
+        dashboard.resource.ts <-- domain // does actual http calls
+      store/
+        dashboard.store.ts <-- domain // `DashboardFeatureState`
+        dashboard-shared.store.ts <-- domain // `DashboardSharedFeatureState`
+      index.ts
+    public/
+        *state
+          public-dashboard-state.module.ts // `forRoot` defining @ddd/dashboard/data tokens.ts
+          index.ts  // re-export domain, shared state
+
+       *feature-list/
+           list/
+               feature-list.container.component.ts
+               feature-list.adapter.ts <-- @ddd/dashboard/data // local provided `DashboardListAdapter`
+           feature-list-module.ts
+
+       *feature-show/
+          show/
+            feature-show.component.ts
+            feature-show.adapter.ts <-- @ddd/dashboard/data // local provided `DashboardShowAdapter`
+          feature-show-module.ts
+
+       *ui/
+        components/
+          ui-dashboard-list.component.ts (display only)
+        patterns/
+        tokens/
+```
+
+| Metric           | ⭐ Rating |
+|------------------|----------|
+| maintainability  | ⭐        |
+| DX               | ⭐        |
+| code complexity  | ⭐        |

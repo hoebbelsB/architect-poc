@@ -1,11 +1,12 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { DashboardsInterfacesModule } from '@architect-poc/dashboards/public/interfaces';
-import { SettingsInterfacesModule } from '@architect-poc/settings/public/interfaces';
-import { SidebarInterfacesModule } from '@architect-poc/sidebar/public/interfaces';
-import { FeatureSidebarModule } from '@architect-poc/sidebar/public/ui/feature-sidebar';
-import { SpacesInterfacesModule } from '@architect-poc/spaces/public/interfaces';
+import { DashboardsPublicStateModule } from '@architect-poc/dashboards-public-state';
+import { SettingsPublicStateModule } from '@architect-poc/settings-public-state';
+import { SidebarPublicStateModule } from '@architect-poc/sidebar-public-state';
+import { FeatureSidebarModule } from '@architect-poc/sidebar-public-feaure-sidebar';
+import { SpacesPublicStateModule } from '@architect-poc/spaces-public-state';
 
 import { AppComponent } from './app.component';
 
@@ -13,10 +14,11 @@ import { AppComponent } from './app.component';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    SpacesInterfacesModule.forRoot(),
-    SettingsInterfacesModule.forRoot(),
-    SidebarInterfacesModule.forRoot(),
-    DashboardsInterfacesModule.forRoot(),
+    HttpClientModule,
+    SpacesPublicStateModule.forRoot(),
+    SettingsPublicStateModule.forRoot(),
+    SidebarPublicStateModule.forRoot(),
+    DashboardsPublicStateModule.forRoot(),
     RouterModule.forRoot([
       {
         path: '',
@@ -27,13 +29,13 @@ import { AppComponent } from './app.component';
         path: 'dashboard',
         loadChildren: () =>
           import(
-            '@architect-poc/dashboards/public/ui/feature-dashboard-view'
+            '@architect-poc/dashboards-public-feature-dashboard-view'
           ).then((m) => m.FeatureDashboardViewModule),
       },
       {
         path: 'space',
         loadChildren: () =>
-          import('@architect-poc/spaces/public/ui/feature-spaces-view').then(
+          import('@architect-poc/spaces-public-feaure-space-view').then(
             (m) => m.FeatureSpaceListModule
           ),
       },
