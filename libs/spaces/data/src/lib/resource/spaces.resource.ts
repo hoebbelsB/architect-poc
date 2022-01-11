@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Space } from '@architect-poc/spaces/domain';
 import { Observable, of } from 'rxjs';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class SpacesResource {
   constructor(private readonly http: HttpClient) {}
 
