@@ -10,4 +10,4 @@ export * from './ports/data/dashboard-feature.state';
 /**
  * Use Case implementations
  */
-export * from './dashboards.use-case';
+export * from './dashboards.adapter.impl';

@@ -5,7 +5,7 @@ import { DashboardFeatureState } from './ports/data/dashboard-feature.state';
 import { DashboardAdapter } from './ports/ui/dashboard.adapter';
 
 @Injectable({ providedIn: 'root' })
-export class DashboardsUseCase implements DashboardAdapter {
+export class DashboardAdapterImpl implements DashboardAdapter {
   constructor(private readonly localState: DashboardFeatureState) {}
 
   loadDashboards(): Observable<Dashboard[]> {

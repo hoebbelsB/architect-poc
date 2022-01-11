@@ -1,7 +1,7 @@
 import {
   DashboardFeatureState,
   DashboardAdapter,
-  DashboardsUseCase,
+  DashboardAdapterImpl,
 } from '@architect-poc/dashboards/use-cases';
 import { SettingsSharedFeatureState } from '@architect-poc/settings-public-state';
 import { DashboardsStore } from './store/dashboards.store';
@@ -17,7 +17,7 @@ export const DATA_PROVIDERS = [
 export const UI_PROVIDERS = [
   {
     provide: DashboardAdapter,
-    useExisting: DashboardsUseCase,
+    useExisting: DashboardAdapterImpl,
     deps: [DashboardFeatureState],
   },
 ];
