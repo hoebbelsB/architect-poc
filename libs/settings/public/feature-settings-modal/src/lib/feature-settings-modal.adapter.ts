@@ -8,7 +8,7 @@ export class FeatureSettingsModalAdapter {
     map(({ history }) => history)
   );
   activeMenu$ = this.localState.activeMenu$;
-
+  menuItems$ = this.localState.menuItems$;
   constructor(private readonly localState: SettingsStore) {}
 
   triggerAction(action: string): void {

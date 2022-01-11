@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { SettingsState, SettingsType } from '@architect-poc/settings/domain';
-import { BehaviorSubject, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, filter, ReplaySubject, switchMap } from 'rxjs';
+import { SettingsResource } from '../resource/settings.resource';
 
 @Injectable({ providedIn: 'root' })
 export class SettingsStore {
@@ -11,6 +12,14 @@ export class SettingsStore {
 
   private readonly _activeMenu$ = new ReplaySubject<SettingsType | null>(1);
   readonly activeMenu$ = this._activeMenu$.asObservable();
+
+  readonly menuItems$ = this.activeMenu$.pipe(
+    filter((type): type is SettingsType => type !== null),
+    switchMap((type) => this.settingsResource.getMenuItems(type))
+  );
+
+  constructor(private readonly settingsResource: SettingsResource) {
+  }
 
   readonly settingsState$ = new BehaviorSubject<SettingsState>(
     this.initialState
