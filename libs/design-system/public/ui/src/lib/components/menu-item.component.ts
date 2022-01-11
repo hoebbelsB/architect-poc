@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input, NgModule } from '@angular/core';
-import { MenuItem } from '@architect-poc/design-system/public/ui';
+import { MenuItem } from '../models/menu-item.model';
 
 @Component({
-  selector: 'architect-poc-menu-item',
+  selector: 'ds-menu-item',
   template: `<div class="menu-item" *ngIf="menuItem">{{menuItem.name}}</div>`,
   changeDetection: ChangeDetectionStrategy.OnPush
 })

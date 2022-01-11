@@ -15,13 +15,13 @@
     </div>
   </ng-container>
   <input #input placeholder="put an action" />
-  <button-component></button-component>
+  <ds-button-component></ds-button-component>
   <button (click)="triggerAction(input.value)">Call the action</button>
   <div><strong>Action History</strong></div>
   <div>
     {{ history$ | async | json }}
   </div>
   <div class="menu-items-container" *ngFor="let menuItem of menuItems$ | async">
-    <architect-poc-menu-item [menuItem]="menuItem"></architect-poc-menu-item>
+    <ds-menu-item [menuItem]="menuItem"></ds-menu-item>
   </div>
 </dialog>

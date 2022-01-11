@@ -21,7 +21,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "architect-poc",
+            "prefix": "ds",
             "style": "kebab-case"
           }
         ]
