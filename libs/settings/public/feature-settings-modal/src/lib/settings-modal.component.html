@@ -21,4 +21,7 @@
   <div>
     {{ history$ | async | json }}
   </div>
+  <div class="menu-items-container" *ngFor="let menuItem of menuItems$ | async">
+    <div class="menu-item">{{menuItem.name}}</div>
+  </div>
 </dialog>

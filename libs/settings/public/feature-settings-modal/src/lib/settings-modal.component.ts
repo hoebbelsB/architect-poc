@@ -5,13 +5,13 @@ import { SettingsAdapter } from '@architect-poc/settings/use-cases';
 import { SettingsType } from '@architect-poc/settings/domain';
 
 @Component({
-  selector: 'app-settings',
+  selector: 'architect-poc-settings',
   templateUrl: './settings-modal.component.html',
 })
 export class SettingsModalComponent {
   readonly history$ = this.settingsUseCase.actionHistory$;
   readonly activeMenu$ = this.settingsUseCase.activeMenu$;
-
+  readonly menuItems$ = this.settingsUseCase.menuItems$;
   readonly SettingsType = SettingsType;
 
   constructor(private readonly settingsUseCase: SettingsAdapter) {
