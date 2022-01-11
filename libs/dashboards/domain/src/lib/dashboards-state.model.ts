@@ -1,5 +1,5 @@
-import { Dashboard } from './dashboard.model';
+import { DashboardModel } from './dashboard.model';
 
 export interface DashboardsState {
-  dashboards: Dashboard[];
+  dashboards: DashboardModel[];
 }

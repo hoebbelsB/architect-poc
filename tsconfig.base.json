@@ -81,7 +81,8 @@
       "@architect-poc/spaces/data": ["libs/spaces/data/src/index.ts"],
       "@architect-poc/spaces/domain": ["libs/spaces/domain/src/index.ts"],
       "@architect-poc/spaces/public/ui": ["libs/spaces/public/ui/src/index.ts"],
-      "@architect-poc/spaces/use-cases": ["libs/spaces/use-cases/src/index.ts"]
+      "@architect-poc/spaces/use-cases": ["libs/spaces/use-cases/src/index.ts"],
+      "@architect-poc/utils": ["libs/utils/src/index.ts"]
     },
     "rootDir": "."
   },
