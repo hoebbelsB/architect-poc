@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, NgModule } from '@angular/core';
-import { ButtonComponentModule } from '@architect-poc/design-system/public/ui';
+import { ButtonComponentModule, MenuItemComponentModule } from '@architect-poc/design-system/public/ui';
 import { SettingsAdapter } from '@architect-poc/settings/use-cases';
 import { SettingsType } from '@architect-poc/settings/domain';
 
@@ -26,6 +26,6 @@ export class SettingsModalComponent {
 @NgModule({
   declarations: [SettingsModalComponent],
   exports: [SettingsModalComponent],
-  imports: [CommonModule, ButtonComponentModule],
+  imports: [CommonModule, ButtonComponentModule, MenuItemComponentModule],
 })
 export class FeatureSettingsModalModule {}
