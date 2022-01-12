@@ -11,4 +11,4 @@ export * from './ports/data/sidebar-feature.state';
 /**
  * Use Case implementations
  */
-export * from './sidebar.use-case';
+export * from './sidebar.adapter.impl';

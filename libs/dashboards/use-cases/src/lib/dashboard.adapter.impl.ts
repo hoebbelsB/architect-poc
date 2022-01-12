@@ -1,17 +1,31 @@
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { SettingsSharedFeatureState } from '@architect-poc/settings-public-state';
+import { SettingsType } from '@architect-poc/settings/domain';
+import { Signal } from '@architect-poc/utils';
+import { map, Observable } from 'rxjs';
 import { stateToFeature } from './dashboard-feature.mapper';
 import { DashboardFeatureState } from './ports/data/dashboard-feature.state';
 import { DashboardAdapter } from './ports/ui/dashboard.adapter';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class DashboardAdapterImpl implements DashboardAdapter {
-  constructor(private readonly localState: DashboardFeatureState) {
-  }
+  readonly action$: Observable<Signal<string> | null> =
+    this.settingsState.actions$.pipe(
+      map((action) =>
+        action.payload === SettingsType.DASHBOARDS ? action : null
+      )
+    );
 
-  readonly dashboards$ = this.localState.dashboards$.pipe(map(arr => arr.map(stateToFeature)));
+  constructor(
+    private readonly dashboardState: DashboardFeatureState,
+    private readonly settingsState: SettingsSharedFeatureState
+  ) {}
+
+  readonly dashboards$ = this.dashboardState.dashboards$.pipe(
+    map((arr) => arr.map(stateToFeature))
+  );
 
   showSettings(): void {
-    this.localState.showDashboardSettings();
+    this.dashboardState.showDashboardSettings();
   }
 }

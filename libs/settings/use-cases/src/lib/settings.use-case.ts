@@ -1,19 +1,20 @@
 import { Injectable } from '@angular/core';
+import { SettingsType } from '@architect-poc/settings/domain';
 import { map } from 'rxjs/operators';
 import { SettingsFeatureState } from './ports/data/settings-feature.state';
 import { SettingsAdapter } from './ports/ui/settings.adapter';
 
 @Injectable({ providedIn: 'root' })
 export class SettingsUseCase implements SettingsAdapter {
-  actionHistory$ = this.localState.settingsState$.pipe(
+  actionHistory$ = this.settingsState.settingsState$.pipe(
     map(({ history }) => history)
   );
-  activeMenu$ = this.localState.activeMenu$;
-  menuItems$ = this.localState.menuItems$;
-  showMenu$ = this.localState.showMenu$;
-  constructor(private readonly localState: SettingsFeatureState) {}
+  activeMenu$ = this.settingsState.activeMenu$;
+  menuItems$ = this.settingsState.menuItems$;
+  showMenu$ = this.settingsState.showMenu$;
+  constructor(private readonly settingsState: SettingsFeatureState) {}
 
-  triggerAction(action: string): void {
-    this.localState.writeAction({type: action});
+  triggerAction(action: string, settingsType: SettingsType): void {
+    this.settingsState.writeAction({ type: action, payload: settingsType });
   }
 }

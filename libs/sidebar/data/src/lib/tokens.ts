@@ -1,7 +1,7 @@
 import {
   SidebarFeatureState,
   SidebarAdapter,
-  SidebarUseCase,
+  SidebarAdapterImpl,
 } from '@architect-poc/sidebar/use-cases';
 import { SidebarStore } from './store/sidebar.store';
 
@@ -15,7 +15,7 @@ export const DATA_PROVIDERS = [
 export const UI_PROVIDERS = [
   {
     provide: SidebarAdapter,
-    useExisting: SidebarUseCase,
+    useExisting: SidebarAdapterImpl,
     deps: [SidebarFeatureState],
   },
 ];

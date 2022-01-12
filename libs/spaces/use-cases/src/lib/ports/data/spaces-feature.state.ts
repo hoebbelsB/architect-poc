@@ -6,7 +6,5 @@ import { Space } from '@architect-poc/spaces/domain';
 @Injectable()
 export abstract class SpacesFeatureState {
   abstract getSpaces(): Observable<Space[]>;
-  abstract settingsActions$: Observable<Signal<string>>;
   abstract showSpacesSettings(): void;
-  abstract clearHistory(): void;
 }
