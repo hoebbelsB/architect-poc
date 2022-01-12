@@ -10,6 +10,7 @@ export class SettingsUseCase implements SettingsAdapter {
   );
   activeMenu$ = this.localState.activeMenu$;
   menuItems$ = this.localState.menuItems$;
+  showMenu$ = this.localState.showMenu$;
   constructor(private readonly localState: SettingsFeatureState) {}
 
   triggerAction(action: string): void {

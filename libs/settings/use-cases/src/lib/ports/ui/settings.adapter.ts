@@ -10,5 +10,6 @@ export abstract class SettingsAdapter {
   abstract actionHistory$: Observable<string[]>;
   // TODO: add menuItems$: Observable or clarify how we render different types otherwise
   abstract activeMenu$: Observable<Signal<SettingsType>>;
+  abstract showMenu$: Observable<boolean>;
   abstract menuItems$: Observable<MenuItem[]>;
 }
