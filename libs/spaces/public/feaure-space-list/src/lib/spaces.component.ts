@@ -29,13 +29,13 @@ import { SpacesAdapter } from '@architect-poc/spaces/use-cases';
   ],
 })
 export class SpacesComponent {
-  readonly settingsActions$ = this.spacesUseCase.settingsActions$;
-  readonly spaces$ = this.spacesUseCase.loadSpaces();
+  readonly action$ = this.spacesAdapter.action$;
+  readonly spaces$ = this.spacesAdapter.loadSpaces();
 
-  constructor(private readonly spacesUseCase: SpacesAdapter) {}
+  constructor(private readonly spacesAdapter: SpacesAdapter) {}
 
   showSpacesSettings() {
-    this.spacesUseCase.showSettings();
+    this.spacesAdapter.showSettings();
   }
 }
 

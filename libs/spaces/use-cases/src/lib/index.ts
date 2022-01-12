@@ -10,4 +10,4 @@ export * from './ports/data/spaces-feature.state';
 /**
  * Use Case implementations
  */
-export * from './spaces.use-case';
+export * from './spaces.adapter.impl';

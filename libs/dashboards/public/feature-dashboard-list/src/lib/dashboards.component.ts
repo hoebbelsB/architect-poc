@@ -30,6 +30,7 @@ import { DashboardAdapter } from '@architect-poc/dashboards/use-cases';
 })
 export class DashboardsComponent {
   readonly dashboards$ = this.dashboardAdapter.dashboards$;
+  readonly action$ = this.dashboardAdapter.action$;
 
   constructor(private readonly dashboardAdapter: DashboardAdapter) {}
 

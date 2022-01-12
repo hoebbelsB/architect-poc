@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export abstract class SettingsAdapter {
-  abstract triggerAction(action: string): void;
+  abstract triggerAction(action: string, type: SettingsType): void;
   abstract actionHistory$: Observable<string[]>;
   // TODO: add menuItems$: Observable or clarify how we render different types otherwise
   abstract activeMenu$: Observable<Signal<SettingsType>>;

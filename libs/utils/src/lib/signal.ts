@@ -1,4 +1,4 @@
-export interface Signal<T extends string, P extends object = object> {
+export interface Signal<T extends string, P = any> {
   type: T;
   payload?: P;
 }

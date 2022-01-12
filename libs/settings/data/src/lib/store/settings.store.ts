@@ -5,31 +5,30 @@ import { Signal } from '@architect-poc/utils';
 import { BehaviorSubject, ReplaySubject, Subject, switchMap } from 'rxjs';
 import { SettingsResource } from '../resource/settings.resource';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class SettingsStore implements SettingsFeatureState {
   readonly initialState: SettingsState = {
     history: [],
     lastAction: '',
   };
 
-  readonly actions$ = new Subject<Signal<string>>();
+  readonly actions$ = new Subject<Signal<string, SettingsType>>();
 
   private readonly _activeMenu$ = new ReplaySubject<Signal<SettingsType>>(1);
   private readonly _showMenu$ = new BehaviorSubject<boolean>(false);
   readonly activeMenu$ = this._activeMenu$.asObservable();
   readonly showMenu$ = this._showMenu$.asObservable();
   readonly menuItems$ = this.activeMenu$.pipe(
-    switchMap(({type}) => this.settingsResource.getMenuItems(type))
+    switchMap(({ type }) => this.settingsResource.getMenuItems(type))
   );
 
-  constructor(private readonly settingsResource: SettingsResource) {
-  }
+  constructor(private readonly settingsResource: SettingsResource) {}
 
   readonly settingsState$ = new BehaviorSubject<SettingsState>(
     this.initialState
   );
 
-  writeAction(action: Signal<string>): void {
+  writeAction(action: Signal<string, SettingsType>): void {
     if (action.type !== 'Close dialog') {
       this.actions$.next(action);
     }
@@ -40,7 +39,7 @@ export class SettingsStore implements SettingsFeatureState {
   showSettings(type: SettingsType | null): void {
     if (type) {
       this._showMenu$.next(true);
-      this._activeMenu$.next({type});
+      this._activeMenu$.next({ type });
     }
   }
 }

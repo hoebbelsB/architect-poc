@@ -1,5 +1,8 @@
 <div class="container">
   <h3>Spaces List</h3>
+  <div *ngIf="action$ | async as action">
+    Action selected: <strong>{{ action.type }}</strong>
+  </div>
   <div class="spaces-list">
     <div *ngFor="let space of spaces$ | async" class="space">
       <a [routerLink]="['/space']">{{ space.name }}</a>

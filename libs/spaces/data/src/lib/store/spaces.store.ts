@@ -12,7 +12,6 @@ import { SpacesResource } from '../resource/spaces.resource';
 @Injectable({ providedIn: 'root' })
 export class SpacesStore implements SpacesFeatureState {
   // stream responsible for any action dispatched from the settings
-  readonly settingsActions$: Observable<Signal<string>> = this.settingsStore.actions$;
 
   constructor(
     private readonly settingsStore: SettingsSharedFeatureState,

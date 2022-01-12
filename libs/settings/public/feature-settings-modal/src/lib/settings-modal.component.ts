@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, NgModule } from '@angular/core';
-import { ButtonComponentModule, MenuItemComponentModule } from '@architect-poc/design-system/public/ui';
+import {
+  ButtonComponentModule,
+  MenuItemComponentModule,
+} from '@architect-poc/design-system/public/ui';
 import { SettingsAdapter } from '@architect-poc/settings/use-cases';
 import { SettingsType } from '@architect-poc/settings/domain';
 import { map } from 'rxjs';
@@ -15,7 +18,7 @@ import { map } from 'rxjs';
       }
 
       .menu-item:hover {
-        color: rgba(0,0,0,0.5);
+        color: rgba(0, 0, 0, 0.5);
       }
 
       .settings-container {
@@ -46,23 +49,28 @@ import { map } from 'rxjs';
         width: 100%;
         height: 100%;
         overflow: auto;
-        background-color: rgba(0,0,0,0.4);
+        background-color: rgba(0, 0, 0, 0.4);
       }
-    `
-  ]
+    `,
+  ],
 })
 export class SettingsModalComponent {
-  readonly activeMenu$ = this.settingsUseCase.activeMenu$.pipe(map(({type}) => type));
+  readonly activeMenu$ = this.settingsUseCase.activeMenu$.pipe(
+    map(({ type }) => type)
+  );
   readonly showMenu$ = this.settingsUseCase.showMenu$;
   readonly menuItems$ = this.settingsUseCase.menuItems$;
   readonly SettingsType = SettingsType;
 
+  private activeMenu: SettingsType | null = null;
+
   constructor(private readonly settingsUseCase: SettingsAdapter) {
-    this.activeMenu$.subscribe((m) => console.log('activeMenu', m));
+    // it's not beautiful
+    this.activeMenu$.subscribe((m) => (this.activeMenu = m));
   }
 
   triggerAction(action: string): void {
-    this.settingsUseCase.triggerAction(action);
+    this.settingsUseCase.triggerAction(action, this.activeMenu as SettingsType);
   }
 
   closeDialog(): void {

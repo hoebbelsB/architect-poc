@@ -2,7 +2,7 @@ import { SettingsSharedFeatureState } from '@architect-poc/settings-public-state
 import {
   SpacesFeatureState,
   SpacesAdapter,
-  SpacesUseCase,
+  SpacesAdapterImpl,
 } from '@architect-poc/spaces/use-cases';
 import { SpacesStore } from './store/spaces.store';
 
@@ -17,7 +17,7 @@ export const DATA_PROVIDERS = [
 export const UI_PROVIDERS = [
   {
     provide: SpacesAdapter,
-    useExisting: SpacesUseCase,
+    useExisting: SpacesAdapterImpl,
     deps: [SpacesFeatureState],
   },
 ];
