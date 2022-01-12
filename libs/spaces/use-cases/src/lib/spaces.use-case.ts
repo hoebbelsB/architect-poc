@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Space } from '@architect-poc/spaces/domain';
 import { SpacesFeatureState } from './ports/data/spaces-feature.state';
 import { SpacesAdapter } from './ports/ui/spaces.adapter';
@@ -8,9 +8,7 @@ import { SpacesAdapter } from './ports/ui/spaces.adapter';
 export class SpacesUseCase implements SpacesAdapter {
   constructor(private readonly spacesDataPort: SpacesFeatureState) {}
 
-  getActionData(): Observable<string> {
-    return this.spacesDataPort.getAction();
-  }
+  readonly settingsActions$: Observable<string> = this.spacesDataPort.settingsActions$.pipe(map(({type}) => type));
 
   loadSpaces(): Observable<Space[]> {
     return this.spacesDataPort.getSpaces();

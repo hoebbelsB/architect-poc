@@ -10,8 +10,8 @@ import { FeatureSpacesListModule } from '@architect-poc/spaces-public-feaure-spa
     <h2>Sidebar Component</h2>
     <button (click)="showSettings()">Toggle sidebar settings</button>
     <architect-poc-settings></architect-poc-settings>
-    <app-spaces></app-spaces>
-    <app-dashboards></app-dashboards>
+    <architect-poc-spaces></architect-poc-spaces>
+    <architect-poc-dashboards></architect-poc-dashboards>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

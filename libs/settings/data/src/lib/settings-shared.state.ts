@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
-import { SettingsState, SettingsType } from '@architect-poc/settings/domain';
+import { SettingsType } from '@architect-poc/settings/domain';
 import { Signal } from '@architect-poc/utils';
 import { Observable } from 'rxjs';
 
 @Injectable()
 export abstract class SettingsSharedFeatureState {
-  abstract settingsState$: Observable<SettingsState>;
-
   abstract clearHistory(): void;
 
   abstract showSettings(type: SettingsType | null): void;
 
-  abstract actions$: Observable<Signal>;
+  // actions dispatched from the settings changing state of another feature
+  abstract actions$: Observable<Signal<string>>;
 }

@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { SpacesAdapter } from '@architect-poc/spaces/use-cases';
 
 @Component({
-  selector: 'app-spaces',
+  selector: 'architect-poc-spaces',
   templateUrl: './spaces.component.html',
   styles: [
     `
@@ -25,7 +25,7 @@ import { SpacesAdapter } from '@architect-poc/spaces/use-cases';
   ],
 })
 export class SpacesComponent {
-  readonly action$ = this.spacesUseCase.getActionData();
+  readonly settingsActions$ = this.spacesUseCase.settingsActions$;
   readonly spaces$ = this.spacesUseCase.loadSpaces();
 
   constructor(private readonly spacesUseCase: SpacesAdapter) {}

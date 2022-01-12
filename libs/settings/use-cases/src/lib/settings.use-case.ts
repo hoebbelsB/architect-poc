@@ -13,6 +13,6 @@ export class SettingsUseCase implements SettingsAdapter {
   constructor(private readonly localState: SettingsFeatureState) {}
 
   triggerAction(action: string): void {
-    this.localState.writeAction(action);
+    this.localState.writeAction({type: action});
   }
 }

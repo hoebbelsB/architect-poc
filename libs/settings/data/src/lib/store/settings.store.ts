@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { SettingsState, SettingsType } from '@architect-poc/settings/domain';
 import { SettingsFeatureState } from '@architect-poc/settings/use-cases';
 import { Signal } from '@architect-poc/utils';
-import { BehaviorSubject, filter, ReplaySubject, Subject, switchMap } from 'rxjs';
+import { BehaviorSubject, ReplaySubject, Subject, switchMap } from 'rxjs';
 import { SettingsResource } from '../resource/settings.resource';
 
 @Injectable({ providedIn: 'root' })
@@ -12,14 +12,13 @@ export class SettingsStore implements SettingsFeatureState {
     lastAction: '',
   };
 
-  readonly actions$ = new Subject<Signal>();
+  readonly actions$ = new Subject<Signal<string>>();
 
   private readonly _activeMenu$ = new ReplaySubject<Signal<SettingsType>>(1);
   readonly activeMenu$ = this._activeMenu$.asObservable();
 
   readonly menuItems$ = this.activeMenu$.pipe(
-    filter((type): type is SettingsType => type !== null),
-    switchMap((type) => this.settingsResource.getMenuItems(type))
+    switchMap(({type}) => this.settingsResource.getMenuItems(type))
   );
 
   constructor(private readonly settingsResource: SettingsResource) {
@@ -29,16 +28,14 @@ export class SettingsStore implements SettingsFeatureState {
     this.initialState
   );
 
-  writeAction(action: Signal<string, any>): void {
-    // this.settingsState$.next({
-    //   history: [...this.settingsState$.getValue().history, action.type],
-    //   lastAction: action.type,
-    // });
+  writeAction(action: Signal<string>): void {
     this.actions$.next(action);
     this.showSettings(null);
   }
 
   showSettings(type: SettingsType | null): void {
-    this._activeMenu$.next(type);
+    if (type) {
+      this._activeMenu$.next({type});
+    }
   }
 }
