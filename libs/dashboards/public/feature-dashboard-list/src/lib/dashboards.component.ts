@@ -8,6 +8,10 @@ import { DashboardAdapter } from '@architect-poc/dashboards/use-cases';
   templateUrl: './dashboards.component.html',
   styles: [
     `
+      .container {
+        background: mediumseagreen;
+      }
+
       .dashboards-list {
         display: flex;
         flex-direction: column;

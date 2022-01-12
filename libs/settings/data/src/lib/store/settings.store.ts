@@ -5,7 +5,7 @@ import { Signal } from '@architect-poc/utils';
 import { BehaviorSubject, ReplaySubject, Subject, switchMap } from 'rxjs';
 import { SettingsResource } from '../resource/settings.resource';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({providedIn: 'root'})
 export class SettingsStore implements SettingsFeatureState {
   readonly initialState: SettingsState = {
     history: [],
@@ -15,8 +15,9 @@ export class SettingsStore implements SettingsFeatureState {
   readonly actions$ = new Subject<Signal<string>>();
 
   private readonly _activeMenu$ = new ReplaySubject<Signal<SettingsType>>(1);
+  private readonly _showMenu$ = new BehaviorSubject<boolean>(false);
   readonly activeMenu$ = this._activeMenu$.asObservable();
-
+  readonly showMenu$ = this._showMenu$.asObservable();
   readonly menuItems$ = this.activeMenu$.pipe(
     switchMap(({type}) => this.settingsResource.getMenuItems(type))
   );
@@ -29,12 +30,16 @@ export class SettingsStore implements SettingsFeatureState {
   );
 
   writeAction(action: Signal<string>): void {
-    this.actions$.next(action);
-    this.showSettings(null);
+    if (action.type !== 'Close dialog') {
+      this.actions$.next(action);
+    }
+    // this.showSettings(null);
+    this._showMenu$.next(false);
   }
 
   showSettings(type: SettingsType | null): void {
     if (type) {
+      this._showMenu$.next(true);
       this._activeMenu$.next({type});
     }
   }
