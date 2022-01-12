@@ -52,7 +52,6 @@ import { FeatureSettingsModalAdapter } from './feature-settings-modal.adapter';
   ]
 })
 export class FeatureSettingsModalComponent {
-  readonly history$ = this.featureSettingsModalAdapter.actionHistory$;
   readonly activeMenuType$ = this.featureSettingsModalAdapter.activeMenu$.pipe(map(({type}) => type));
   readonly showMenu$ = this.featureSettingsModalAdapter.showMenu$;
   readonly menuItems$ = this.featureSettingsModalAdapter.menuItems$;
