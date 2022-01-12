@@ -5,7 +5,7 @@ import { Space } from '@architect-poc/spaces/domain';
 
 @Injectable({ providedIn: 'root' })
 export class FeatureSpaceListAdapter {
-  readonly actionType$ = this.spacesStore.settingsActions$.pipe(map(({type}) => type));
+  readonly action$ = this.spacesStore.settingsActions$.pipe(map(({payload}) => (payload as any).name));
   constructor(private readonly spacesStore: SpacesStore) {}
 
   loadSpaces(): Observable<Space[]> {

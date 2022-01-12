@@ -30,7 +30,7 @@ import { FeatureSpaceListAdapter } from './feature-space-list.adapter';
 })
 export class FeatureSpaceListComponent {
   readonly spaces$ = this.featureSpaceListAdapter.loadSpaces();
-  readonly actionType$ = this.featureSpaceListAdapter.actionType$;
+  readonly action$ = this.featureSpaceListAdapter.action$;
   constructor(private readonly featureSpaceListAdapter: FeatureSpaceListAdapter) {}
 
   showSpacesSettings() {

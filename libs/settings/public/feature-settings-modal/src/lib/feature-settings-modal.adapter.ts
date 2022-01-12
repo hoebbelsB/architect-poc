@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { SettingsStore } from '@architect-poc/settings/data';
+import { ActionType, Signal } from '@architect-poc/utils';
 import { map } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
@@ -13,7 +14,7 @@ export class FeatureSettingsModalAdapter {
 
   constructor(private readonly settingsStore: SettingsStore) {}
 
-  triggerAction(action: string): void {
-    this.settingsStore.writeAction({type: action});
+  triggerAction(action: Signal<ActionType>): void {
+    this.settingsStore.writeAction(action);
   }
 }

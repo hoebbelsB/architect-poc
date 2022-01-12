@@ -30,7 +30,7 @@ import { FeatureDashboardListAdapter } from './feature-dashboard-list.adapter';
 })
 export class FeatureDashboardsListComponent {
   readonly dashboards$ = this.featureDashboardListAdapter.dashboards$;
-  readonly actionType$ = this.featureDashboardListAdapter.actionType$;
+  readonly action$ = this.featureDashboardListAdapter.action$;
   constructor(private readonly featureDashboardListAdapter: FeatureDashboardListAdapter) {}
 
   showDashboardSettings(): void {

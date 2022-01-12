@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, NgModule } from '@angular/core';
 import { ButtonComponentModule, MenuItemComponentModule } from '@architect-poc/design-system/public/ui';
 import { SettingsType } from '@architect-poc/settings/domain';
+import { ActionType, Signal } from '@architect-poc/utils';
 import { map } from 'rxjs/operators';
 import { FeatureSettingsModalAdapter } from './feature-settings-modal.adapter';
 
@@ -56,15 +57,14 @@ export class FeatureSettingsModalComponent {
   readonly showMenu$ = this.featureSettingsModalAdapter.showMenu$;
   readonly menuItems$ = this.featureSettingsModalAdapter.menuItems$;
   readonly SettingsType = SettingsType;
-
   constructor(private readonly featureSettingsModalAdapter: FeatureSettingsModalAdapter) {}
 
-  triggerAction(action: string): void {
-    this.featureSettingsModalAdapter.triggerAction(action);
+  triggerAction(action: Signal<SettingsType>): void {
+    this.featureSettingsModalAdapter.triggerAction({type: action.type as unknown as ActionType, payload: action.payload});
   }
 
   closeDialog(): void {
-    this.triggerAction('Close dialog');
+    this.featureSettingsModalAdapter.triggerAction({type: ActionType.CLOSE});
   }
 }
 

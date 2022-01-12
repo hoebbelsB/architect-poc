@@ -41,7 +41,7 @@
       >
         <ds-menu-item
           class="menu-item"
-          (click)="triggerAction(menuItem.name)"
+          (click)="triggerAction({type: activeMenuType, payload: {name: menuItem.name}})"
           [menuItem]="menuItem"
         ></ds-menu-item>
       </div>

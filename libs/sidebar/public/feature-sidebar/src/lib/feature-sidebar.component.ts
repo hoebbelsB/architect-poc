@@ -17,7 +17,7 @@ import { FeatureSidebarAdapter } from './feature-sidebar.adapter';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FeatureSidebarComponent {
-  readonly actionType$ = this.featureSidebarAdapter.actionType$;
+  readonly action$ = this.featureSidebarAdapter.action$;
   constructor(private featureSidebarAdapter: FeatureSidebarAdapter) {}
 
   showSettings() {

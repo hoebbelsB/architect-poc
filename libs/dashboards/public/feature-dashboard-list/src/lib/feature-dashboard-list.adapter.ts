@@ -5,7 +5,7 @@ import { map } from 'rxjs';
 @Injectable({providedIn: 'root'})
 export class FeatureDashboardListAdapter {
   readonly dashboards$ = this.dashboardsStore.dashboards$;
-  readonly actionType$ = this.dashboardsStore.settingsActions$.pipe(map(({type}) => type))
+  readonly action$ = this.dashboardsStore.settingsActions$.pipe(map(({payload}) => (payload as any).name))
 
   constructor(private readonly dashboardsStore: DashboardsStore) {
   }
