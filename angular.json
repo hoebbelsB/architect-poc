@@ -29,6 +29,7 @@
     "spaces-public-feaure-space-view": "libs/spaces/public/feaure-space-view",
     "spaces-public-state": "libs/spaces/public/state",
     "spaces-public-ui": "libs/spaces/public/ui",
-    "spaces-use-cases": "libs/spaces/use-cases"
+    "spaces-use-cases": "libs/spaces/use-cases",
+    "utils": "libs/utils"
   }
 }

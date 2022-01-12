@@ -1,6 +1,6 @@
 <div class="container">
   <div><strong>SpacesComponent</strong></div>
-  <span>{{ action$ | async }}</span>
+  <span>{{ settingsActions$ | async }}</span>
   <button (click)="clearHistory()">Clear History</button>
   <h3>Spaces List</h3>
   <div class="spaces-list">
@@ -9,5 +9,4 @@
       <button (click)="showSpacesSettings()">toggle menu</button>
     </div>
   </div>
-
 </div>

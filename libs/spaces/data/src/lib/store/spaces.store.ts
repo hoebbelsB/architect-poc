@@ -3,27 +3,24 @@ import {
   SettingsSharedFeatureState,
   SettingsType,
 } from '@architect-poc/settings-public-state';
-import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Signal } from '@architect-poc/utils';
+import { Observable } from 'rxjs';
 import { Space } from '@architect-poc/spaces/domain';
 import { SpacesFeatureState } from '@architect-poc/spaces/use-cases';
 import { SpacesResource } from '../resource/spaces.resource';
 
 @Injectable({ providedIn: 'root' })
 export class SpacesStore implements SpacesFeatureState {
-  getSpaces(): Observable<Space[]> {
-    return this.spacesResource.getSpaces();
-  }
+  // stream responsible for any action dispatched from the settings
+  readonly settingsActions$: Observable<Signal<string>> = this.settingsStore.actions$;
 
   constructor(
     private readonly settingsStore: SettingsSharedFeatureState,
     private readonly spacesResource: SpacesResource
   ) {}
 
-  getAction(): Observable<string> {
-    return this.settingsStore.settingsState$.pipe(
-      map(({ lastAction }) => lastAction)
-    );
+  getSpaces(): Observable<Space[]> {
+    return this.spacesResource.getSpaces();
   }
 
   showSpacesSettings(): void {
