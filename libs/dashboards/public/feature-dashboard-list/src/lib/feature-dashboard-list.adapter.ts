@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Dashboard } from '@architect-poc/dashboards/domain';
 import { DashboardsStore } from '@architect-poc/dashboards/data';
+import { map } from 'rxjs';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({providedIn: 'root'})
 export class FeatureDashboardListAdapter {
-  constructor(private readonly localState: DashboardsStore) {}
+  readonly dashboards$ = this.dashboardsStore.dashboards$;
+  readonly actionType$ = this.dashboardsStore.settingsActions$.pipe(map(({type}) => type))
 
-  loadDashboards(): Observable<Dashboard[]> {
-    return this.localState.getDashboards();
+  constructor(private readonly dashboardsStore: DashboardsStore) {
   }
 
   showSettings(): void {
-    this.localState.showDashboardSettings();
+    this.dashboardsStore.showDashboardSettings();
   }
 }

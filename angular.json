@@ -25,6 +25,7 @@
     "spaces-public-feature-space-list": "libs/spaces/public/feature-space-list",
     "spaces-public-feature-space-view": "libs/spaces/public/feature-space-view",
     "spaces-public-state": "libs/spaces/public/state",
-    "spaces-public-ui": "libs/spaces/public/ui"
+    "spaces-public-ui": "libs/spaces/public/ui",
+    "utils": "libs/utils"
   }
 }

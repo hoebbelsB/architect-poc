@@ -1,21 +1,24 @@
 import { Injectable } from '@angular/core';
 import { SettingsState, SettingsType } from '@architect-poc/settings/domain';
-import { BehaviorSubject, filter, ReplaySubject, switchMap } from 'rxjs';
+import { Signal } from '@architect-poc/utils';
+import { BehaviorSubject, ReplaySubject, Subject, switchMap } from 'rxjs';
 import { SettingsResource } from '../resource/settings.resource';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({providedIn: 'root'})
 export class SettingsStore {
   readonly initialState: SettingsState = {
     history: [],
     lastAction: '',
   };
 
-  private readonly _activeMenu$ = new ReplaySubject<SettingsType | null>(1);
-  readonly activeMenu$ = this._activeMenu$.asObservable();
+  readonly actions$ = new Subject<Signal<string>>();
 
+  private readonly _activeMenu$ = new ReplaySubject<Signal<SettingsType>>(1);
+  private readonly _showMenu$ = new BehaviorSubject<boolean>(false);
+  readonly activeMenu$ = this._activeMenu$.asObservable();
+  readonly showMenu$ = this._showMenu$.asObservable();
   readonly menuItems$ = this.activeMenu$.pipe(
-    filter((type): type is SettingsType => type !== null),
-    switchMap((type) => this.settingsResource.getMenuItems(type))
+    switchMap(({type}) => this.settingsResource.getMenuItems(type))
   );
 
   constructor(private readonly settingsResource: SettingsResource) {
@@ -25,15 +28,18 @@ export class SettingsStore {
     this.initialState
   );
 
-  writeAction(action: string): void {
-    this.settingsState$.next({
-      history: [...this.settingsState$.getValue().history, action],
-      lastAction: action,
-    });
-    this.showSettings(null);
+  writeAction(action: Signal<string>): void {
+    if (action.type !== 'Close dialog') {
+      this.actions$.next(action);
+    }
+    // this.showSettings(null);
+    this._showMenu$.next(false);
   }
 
   showSettings(type: SettingsType | null): void {
-    this._activeMenu$.next(type);
+    if (type) {
+      this._showMenu$.next(true);
+      this._activeMenu$.next({type});
+    }
   }
 }

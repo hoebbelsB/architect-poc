@@ -1,25 +1,18 @@
 import { Injectable } from '@angular/core';
+import { map, Observable } from 'rxjs';
 import { SpacesStore } from '@architect-poc/spaces/data';
 import { Space } from '@architect-poc/spaces/domain';
-import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class FeatureSpaceListAdapter {
-  constructor(private readonly spacesDataPort: SpacesStore) {}
-
-  getActionData(): Observable<string> {
-    return this.spacesDataPort.getAction();
-  }
+  readonly actionType$ = this.spacesStore.settingsActions$.pipe(map(({type}) => type));
+  constructor(private readonly spacesStore: SpacesStore) {}
 
   loadSpaces(): Observable<Space[]> {
-    return this.spacesDataPort.getSpaces();
+    return this.spacesStore.getSpaces();
   }
 
   showSettings(): void {
-    this.spacesDataPort.showSpacesSettings();
-  }
-
-  triggerClearHistory(): void {
-    this.spacesDataPort.clearHistory();
+    this.spacesStore.showSpacesSettings();
   }
 }

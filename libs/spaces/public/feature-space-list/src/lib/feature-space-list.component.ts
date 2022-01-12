@@ -8,6 +8,10 @@ import { FeatureSpaceListAdapter } from './feature-space-list.adapter';
   templateUrl: './feature-space-list.component.html',
   styles: [
     `
+      .container {
+        background: lightskyblue;
+      }
+
       .spaces-list {
         display: flex;
         flex-direction: column;
@@ -25,17 +29,12 @@ import { FeatureSpaceListAdapter } from './feature-space-list.adapter';
   ],
 })
 export class FeatureSpaceListComponent {
-  readonly action$ = this.featureSpaceListAdapter.getActionData();
   readonly spaces$ = this.featureSpaceListAdapter.loadSpaces();
-
+  readonly actionType$ = this.featureSpaceListAdapter.actionType$;
   constructor(private readonly featureSpaceListAdapter: FeatureSpaceListAdapter) {}
 
   showSpacesSettings() {
     this.featureSpaceListAdapter.showSettings();
-  }
-
-  clearHistory() {
-    this.featureSpaceListAdapter.triggerClearHistory();
   }
 }
 

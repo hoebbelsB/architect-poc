@@ -8,6 +8,10 @@ import { FeatureDashboardListAdapter } from './feature-dashboard-list.adapter';
   templateUrl: './feature-dashboards-list.component.html',
   styles: [
     `
+      .container {
+        background: mediumseagreen;
+      }
+
       .dashboards-list {
         display: flex;
         flex-direction: column;
@@ -25,8 +29,8 @@ import { FeatureDashboardListAdapter } from './feature-dashboard-list.adapter';
   ],
 })
 export class FeatureDashboardsListComponent {
-  readonly dashboards$ = this.featureDashboardListAdapter.loadDashboards();
-
+  readonly dashboards$ = this.featureDashboardListAdapter.dashboards$;
+  readonly actionType$ = this.featureDashboardListAdapter.actionType$;
   constructor(private readonly featureDashboardListAdapter: FeatureDashboardListAdapter) {}
 
   showDashboardSettings(): void {

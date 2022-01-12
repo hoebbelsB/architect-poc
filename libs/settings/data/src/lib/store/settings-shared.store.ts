@@ -4,16 +4,9 @@ import { SettingsStore } from './settings.store';
 
 @Injectable({ providedIn: 'root' })
 export class SettingsSharedStore {
-  readonly settingsState$ = this.settingsStore.settingsState$;
+  readonly actions$ = this.settingsStore.actions$;
 
   constructor(private readonly settingsStore: SettingsStore) {}
-
-  clearHistory(): void {
-    this.settingsStore.settingsState$.next({
-      history: [],
-      lastAction: '',
-    });
-  }
 
   showSettings(type: SettingsType | null): void {
     this.settingsStore.showSettings(type);
