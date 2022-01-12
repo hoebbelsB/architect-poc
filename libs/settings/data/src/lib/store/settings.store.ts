@@ -27,10 +27,12 @@ export class SettingsStore implements SettingsFeatureState {
   );
 
   writeAction(action: string): void {
-    this.settingsState$.next({
-      history: [...this.settingsState$.getValue().history, action],
-      lastAction: action,
-    });
+    if (action !== 'Close dialog') {
+      this.settingsState$.next({
+        history: [...this.settingsState$.getValue().history, action],
+        lastAction: action,
+      });
+    }
     this.showSettings(null);
   }
 

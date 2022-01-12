@@ -7,6 +7,35 @@ import { SettingsType } from '@architect-poc/settings/domain';
 @Component({
   selector: 'architect-poc-settings',
   templateUrl: './settings-modal.component.html',
+  styles: [
+    `
+      .spaces-settings {
+        background: lightskyblue;
+      }
+
+      .dashboards-settings {
+        background: mediumseagreen;
+      }
+
+      .sidebar-settings {
+        background: darkgoldenrod;
+      }
+
+      .dialog {
+        margin-top: 100px;
+      }
+
+      .backdrop {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.4);
+      }
+    `
+  ]
 })
 export class SettingsModalComponent {
   readonly history$ = this.settingsUseCase.actionHistory$;
@@ -20,6 +49,10 @@ export class SettingsModalComponent {
 
   triggerAction(action: string): void {
     this.settingsUseCase.triggerAction(action);
+  }
+
+  closeDialog(): void {
+    this.triggerAction('Close dialog');
   }
 }
 

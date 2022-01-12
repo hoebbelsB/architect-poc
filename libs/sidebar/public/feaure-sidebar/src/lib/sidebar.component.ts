@@ -6,10 +6,16 @@ import { FeatureSpacesListModule } from '@architect-poc/spaces-public-feaure-spa
 
 @Component({
   selector: 'architect-poc-sidebar',
+  styles: [
+    `
+      :host {
+        background: darkgoldenrod;
+      }
+    `
+  ],
   template: `
     <h2>Sidebar Component</h2>
     <button (click)="showSettings()">Toggle sidebar settings</button>
-    <architect-poc-settings></architect-poc-settings>
     <app-spaces></app-spaces>
     <app-dashboards></app-dashboards>
   `,

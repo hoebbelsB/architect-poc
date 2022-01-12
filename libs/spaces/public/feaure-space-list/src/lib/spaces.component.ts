@@ -8,6 +8,10 @@ import { SpacesAdapter } from '@architect-poc/spaces/use-cases';
   templateUrl: './spaces.component.html',
   styles: [
     `
+      .container {
+        background: lightskyblue;
+      }
+
       .spaces-list {
         display: flex;
         flex-direction: column;
