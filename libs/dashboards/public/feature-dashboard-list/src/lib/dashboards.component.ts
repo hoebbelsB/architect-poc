@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { DashboardAdapter } from '@architect-poc/dashboards/use-cases';
+import { ButtonComponentModule } from '@architect-poc/design-system/public/ui';
 
 @Component({
   selector: 'architect-poc-dashboards',
@@ -9,7 +10,7 @@ import { DashboardAdapter } from '@architect-poc/dashboards/use-cases';
   styles: [
     `
       .container {
-        background: mediumseagreen;
+        background: var(--dashboard-color);
       }
 
       .dashboards-list {
@@ -41,7 +42,7 @@ export class DashboardsComponent {
 
 @NgModule({
   declarations: [DashboardsComponent],
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, ButtonComponentModule],
   exports: [DashboardsComponent],
 })
 export class FeatureDashboardListModule {}

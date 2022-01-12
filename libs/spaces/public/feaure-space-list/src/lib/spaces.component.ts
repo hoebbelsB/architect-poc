@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ButtonComponentModule } from '@architect-poc/design-system/public/ui';
 import { SpacesAdapter } from '@architect-poc/spaces/use-cases';
 
 @Component({
@@ -9,7 +10,7 @@ import { SpacesAdapter } from '@architect-poc/spaces/use-cases';
   styles: [
     `
       .container {
-        background: lightskyblue;
+        background: var(--spaces-color);
       }
 
       .spaces-list {
@@ -42,6 +43,6 @@ export class SpacesComponent {
 @NgModule({
   declarations: [SpacesComponent],
   exports: [SpacesComponent],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ButtonComponentModule],
 })
 export class FeatureSpacesListModule {}

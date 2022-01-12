@@ -6,7 +6,7 @@
   <div class="spaces-list">
     <div *ngFor="let space of spaces$ | async" class="space">
       <a [routerLink]="['/space']">{{ space.name }}</a>
-      <button (click)="showSpacesSettings()">toggle menu</button>
+      <button ds-button (click)="showSpacesSettings()">toggle menu</button>
     </div>
   </div>
 </div>

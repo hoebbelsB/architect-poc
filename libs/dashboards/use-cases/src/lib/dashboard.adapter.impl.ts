@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SettingsSharedFeatureState } from '@architect-poc/settings/data';
+import { SettingsSharedFeatureState } from '@architect-poc/settings-public-state';
 import { SettingsType } from '@architect-poc/settings/domain';
 import { Signal } from '@architect-poc/utils';
 import { map, Observable } from 'rxjs';

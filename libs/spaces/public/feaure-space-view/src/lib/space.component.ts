@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
       :host {
         display: block;
         border: 1px solid purple;
+        background: var(--spaces-color);
       }
     `,
   ],

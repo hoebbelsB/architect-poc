@@ -26,19 +26,19 @@ import { map } from 'rxjs';
       }
 
       .spaces-settings {
-        background: lightskyblue;
+        background: var(--spaces-color);
       }
 
       .dashboards-settings {
-        background: mediumseagreen;
+        background: var(--dashboard-color);
       }
 
       .sidebar-settings {
-        background: darkgoldenrod;
+        background: var(--sidebar-color);
       }
 
       .dialog {
-        background: hotpink;
+        background: var(--settings-color);
         margin-top: 100px;
       }
 

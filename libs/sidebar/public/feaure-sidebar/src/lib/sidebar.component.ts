@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, NgModule } from '@angular/core';
 import { FeatureDashboardListModule } from '@architect-poc/dashboards-public-feature-dashboard-list';
+import { ButtonComponentModule } from '@architect-poc/design-system/public/ui';
 import { SidebarAdapter } from '@architect-poc/sidebar/use-cases';
 import { FeatureSpacesListModule } from '@architect-poc/spaces-public-feaure-space-list';
 
@@ -9,7 +10,7 @@ import { FeatureSpacesListModule } from '@architect-poc/spaces-public-feaure-spa
   styles: [
     `
       :host {
-        background: darkgoldenrod;
+        background: var(--sidebar-color);
       }
     `,
   ],
@@ -18,7 +19,7 @@ import { FeatureSpacesListModule } from '@architect-poc/spaces-public-feaure-spa
     <div *ngIf="action$ | async as action">
       Action selected: <strong>{{ action.type }}</strong>
     </div>
-    <button (click)="showSettings()">Toggle sidebar settings</button>
+    <button ds-button (click)="showSettings()">Toggle sidebar settings</button>
     <architect-poc-spaces></architect-poc-spaces>
     <architect-poc-dashboards></architect-poc-dashboards>
   `,
@@ -35,7 +36,12 @@ export class SidebarComponent {
 }
 
 @NgModule({
-  imports: [FeatureDashboardListModule, FeatureSpacesListModule, CommonModule],
+  imports: [
+    FeatureDashboardListModule,
+    FeatureSpacesListModule,
+    CommonModule,
+    ButtonComponentModule,
+  ],
   exports: [SidebarComponent],
   declarations: [SidebarComponent],
   providers: [],
