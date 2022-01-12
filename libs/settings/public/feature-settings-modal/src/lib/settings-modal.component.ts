@@ -27,6 +27,7 @@ import { map } from 'rxjs';
       }
 
       .dialog {
+        background: hotpink;
         margin-top: 100px;
       }
 
