@@ -1,6 +1,6 @@
 <dialog *ngIf="activeMenu$ | async as activeMenu" open>
   <!-- TODO: render actual menus, do we divide them into components? -->
-  <ng-container [ngSwitch]="activeMenu">
+  <ng-container [ngSwitch]="activeMenu.type">
     <div *ngSwitchCase="SettingsType.SPACES">
       <h2>Spaces Settings</h2>
     </div>

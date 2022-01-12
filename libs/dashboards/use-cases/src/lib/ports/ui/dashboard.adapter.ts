@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Dashboard } from '@architect-poc/dashboards/domain';
+import { DashboardListItem } from '../../dashboard-feature.model';
 
 @Injectable()
 export abstract class DashboardAdapter {
-  abstract loadDashboards(): Observable<Dashboard[]>;
+  abstract dashboards$: Observable<DashboardListItem[]>;
   abstract showSettings(): void;
 }
