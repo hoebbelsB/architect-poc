@@ -1,19 +1,18 @@
 <div
   class="modal-wrapper"
-  *ngIf="activeMenu$ | async as activeMenu"
+  *ngIf="showMenu$ | async"
 >
-  <div class="backdrop" (click)="closeDialog()"></div>
+  <div
+    class="backdrop"
+    (click)="closeDialog()"
+  ></div>
   <dialog
-    [ngClass]="{
-    'spaces-settings': activeMenu === SettingsType.SPACES,
-    'sidebar-settings': activeMenu === SettingsType.SIDEBAR,
-    'dashboards-settings': activeMenu === SettingsType.DASHBOARDS
-    }"
+    *ngIf="activeMenu$ | async as activeMenu"
     class="dialog"
     open
   >
     <!-- TODO: render actual menus, do we divide them into components? -->
-    <ng-container [ngSwitch]="activeMenu.type">
+    <ng-container [ngSwitch]="activeMenu">
       <div *ngSwitchCase="SettingsType.SPACES">
         <h2>Spaces Settings</h2>
       </div>
@@ -27,18 +26,27 @@
         <div><strong>Lol</strong></div>
       </div>
     </ng-container>
-    <div><strong>Action History</strong></div>
-    <div>
-      {{ history$ | async | json }}
-    </div>
     <div
-      class="menu-items-container"
-      *ngFor="let menuItem of menuItems$ | async"
+      class="settings-container"
+      [ngClass]="{
+    'spaces-settings': activeMenu === SettingsType.SPACES,
+    'sidebar-settings': activeMenu === SettingsType.SIDEBAR,
+    'dashboards-settings': activeMenu === SettingsType.DASHBOARDS
+    }"
     >
-      <ds-menu-item
-        (click)="triggerAction(menuItem.name)"
-        [menuItem]="menuItem"
-      ></ds-menu-item>
+      <div><strong>Action History</strong></div>
+      <div>
+        {{ history$ | async | json }}
+      </div>
+      <div
+        class="menu-items-container"
+        *ngFor="let menuItem of menuItems$ | async"
+      >
+        <ds-menu-item
+          (click)="triggerAction(menuItem.name)"
+          [menuItem]="menuItem"
+        ></ds-menu-item>
+      </div>
     </div>
   </dialog>
 </div>

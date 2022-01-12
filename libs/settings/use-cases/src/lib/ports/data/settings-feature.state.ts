@@ -10,6 +10,7 @@ export abstract class SettingsFeatureState {
   abstract activeMenu$: Observable<Signal<SettingsType>>;
   abstract settingsState$: Observable<SettingsState>;
   abstract menuItems$: Observable<MenuItem[]>;
+  abstract showMenu$: Observable<boolean>;
   // actions dispatched from the settings changing state of another feature
   abstract actions$: Observable<Signal<string>>;
 }

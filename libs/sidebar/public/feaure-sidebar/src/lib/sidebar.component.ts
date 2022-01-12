@@ -15,8 +15,8 @@ import { FeatureSpacesListModule } from '@architect-poc/spaces-public-feaure-spa
   template: `
     <h2>Sidebar Component</h2>
     <button (click)="showSettings()">Toggle sidebar settings</button>
-    <app-spaces></app-spaces>
-    <app-dashboards></app-dashboards>
+    <architect-poc-spaces></architect-poc-spaces>
+    <architect-poc-dashboards></architect-poc-dashboards>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
