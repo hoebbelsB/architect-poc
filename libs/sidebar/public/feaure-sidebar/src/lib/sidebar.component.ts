@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, NgModule } from '@angular/core';
 import { FeatureDashboardListModule } from '@architect-poc/dashboards-public-feature-dashboard-list';
-import { FeatureSettingsModalModule } from '@architect-poc/settings-public-feature-settings-modal';
 import { SidebarAdapter } from '@architect-poc/sidebar/use-cases';
 import { FeatureSpacesListModule } from '@architect-poc/spaces-public-feaure-space-list';
 
@@ -31,7 +30,6 @@ export class SidebarComponent {
 
 @NgModule({
   imports: [
-    FeatureSettingsModalModule,
     FeatureDashboardListModule,
     FeatureSpacesListModule,
   ],
