@@ -21,6 +21,8 @@ Focus on maximum inversion of control, level of abstraction and constraints.
 
 ### Folder Structure and Constraints
 
+![Dep Graph](./docs/abstract-dep-graph.png)
+
 ```
 dashboards/
     *domain/
@@ -84,6 +86,8 @@ Comparison to **Extended Layered Architecture**
 ![Lib Layers](./docs/lib-layers.png)
 
 ### Folder Structure and Constraints
+
+![Dep Graph](./docs/simple-dep-graph.png)
 
 ```
 dashboards/
