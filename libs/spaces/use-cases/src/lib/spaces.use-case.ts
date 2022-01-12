@@ -17,8 +17,4 @@ export class SpacesUseCase implements SpacesAdapter {
   showSettings(): void {
     this.spacesDataPort.showSpacesSettings();
   }
-
-  triggerClearHistory(): void {
-    this.spacesDataPort.clearHistory();
-  }
 }

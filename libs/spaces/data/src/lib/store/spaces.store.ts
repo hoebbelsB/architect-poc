@@ -26,8 +26,4 @@ export class SpacesStore implements SpacesFeatureState {
   showSpacesSettings(): void {
     this.settingsStore.showSettings(SettingsType.SPACES);
   }
-
-  clearHistory(): void {
-    this.settingsStore.clearHistory();
-  }
 }

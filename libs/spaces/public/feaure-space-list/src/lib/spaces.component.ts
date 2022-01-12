@@ -37,10 +37,6 @@ export class SpacesComponent {
   showSpacesSettings() {
     this.spacesUseCase.showSettings();
   }
-
-  clearHistory() {
-    this.spacesUseCase.triggerClearHistory();
-  }
 }
 
 @NgModule({

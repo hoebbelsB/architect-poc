@@ -35,14 +35,12 @@
     }"
     >
       <div><strong>Action History</strong></div>
-      <div>
-        {{ history$ | async | json }}
-      </div>
       <div
         class="menu-items-container"
         *ngFor="let menuItem of menuItems$ | async"
       >
         <ds-menu-item
+          class="menu-item"
           (click)="triggerAction(menuItem.name)"
           [menuItem]="menuItem"
         ></ds-menu-item>

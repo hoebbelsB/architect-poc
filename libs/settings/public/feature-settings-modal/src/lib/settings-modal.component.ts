@@ -10,6 +10,14 @@ import { map } from 'rxjs';
   templateUrl: './settings-modal.component.html',
   styles: [
     `
+      .menu-item {
+        cursor: pointer;
+      }
+
+      .menu-item:hover {
+        color: rgba(0,0,0,0.5);
+      }
+
       .settings-container {
         padding: 10px;
       }
@@ -44,7 +52,6 @@ import { map } from 'rxjs';
   ]
 })
 export class SettingsModalComponent {
-  readonly history$ = this.settingsUseCase.actionHistory$;
   readonly activeMenu$ = this.settingsUseCase.activeMenu$.pipe(map(({type}) => type));
   readonly showMenu$ = this.settingsUseCase.showMenu$;
   readonly menuItems$ = this.settingsUseCase.menuItems$;

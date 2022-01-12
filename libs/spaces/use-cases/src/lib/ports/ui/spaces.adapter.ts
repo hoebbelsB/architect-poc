@@ -7,5 +7,4 @@ export abstract class SpacesAdapter {
   abstract settingsActions$: Observable<string>;
   abstract loadSpaces(): Observable<Space[]>;
   abstract showSettings(): void;
-  abstract triggerClearHistory(): void;
 }
