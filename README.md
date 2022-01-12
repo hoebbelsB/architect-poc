@@ -47,7 +47,7 @@ dashboards/
 
        *feature-list/
            list/
-               feature-list.container.component.ts <-- @ddd/dashboard/uses-cases (`FeatureDashboardListAdapter`)
+               feature-list.component.ts <-- @ddd/dashboard/uses-cases (`FeatureDashboardListAdapter`)
            feature-list-module.ts
 
        *feature-show/
@@ -78,6 +78,7 @@ We focus on maximum developer speed by removing all abstraction layers.
 * Domain Driven Design
 * (simplified) Layered Architecture
 
+Comparison to **Extended Layered Architecture**
 * removed abstraction layer for `DashboardFeatureState`
 * removed abstraction layer for `DashboardSharedFeatureState`
 * removed `use-cases` library
@@ -104,7 +105,7 @@ dashboards/
 
        *feature-list/
            list/
-               feature-list.container.component.ts
+               feature-list.component.ts
                feature-list.adapter.ts <-- @ddd/dashboard/data // local provided `DashboardListAdapter`
            feature-list-module.ts
 
