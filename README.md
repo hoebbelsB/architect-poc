@@ -64,12 +64,6 @@ dashboards/
         tokens/
 ```
 
-| Metric           | ⭐ Rating |
-|------------------|----------|
-| maintainability  | ⭐        |
-| DX               | ⭐        |
-| code complexity  | ⭐        |
-
 ## Simple Layered Architecture
 
 ### Design Decisions & Patterns
@@ -125,12 +119,6 @@ dashboards/
         patterns/
         tokens/
 ```
-
-| Metric           | ⭐ Rating |
-|------------------|----------|
-| maintainability  | ⭐        |
-| DX               | ⭐        |
-| code complexity  | ⭐        |
 
 ## Data Sharing and UI workflow Comparison
 
