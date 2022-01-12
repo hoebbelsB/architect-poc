@@ -11,10 +11,12 @@ The level of abstraction is the main driver for _maintainability_, _DX_ and _cod
 
 Focus on maximum inversion of control, level of abstraction and constraints.
 
-* Separation of Concerns
+* Separation of Concerns (domain driven feature libraries)
 * Domain Driven Design
 * Layered Architecture
 * Adapter/Port Pattern
+
+![Lib Layers](./docs/lib-extended-layers.png)
 
 
 ### Folder Structure and Constraints
@@ -74,7 +76,7 @@ dashboards/
 
 We focus on maximum developer speed by removing all abstraction layers.
 
-* Separation of Concerns
+* Separation of Concerns (domain driven feature libraries)
 * Domain Driven Design
 * (simplified) Layered Architecture
 
@@ -84,6 +86,8 @@ Comparison to **Extended Layered Architecture**
 * removed `use-cases` library
 * removed `tokens` since not needed anylonger
 * moved `Adapter` logic directly to `Components`
+
+![Lib Layers](./docs/lib-layers.png)
 
 ### Folder Structure and Constraints
 
@@ -127,3 +131,10 @@ dashboards/
 | maintainability  | ⭐        |
 | DX               | ⭐        |
 | code complexity  | ⭐        |
+
+## Data Sharing and UI workflow Comparison
+
+![Lib Layers](./docs/lib-to-lib.png)
+
+
+![Lib Layers](./docs/ui-workflow.png)
