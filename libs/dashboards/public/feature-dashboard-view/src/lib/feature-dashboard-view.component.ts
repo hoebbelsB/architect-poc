@@ -14,8 +14,8 @@ import { RouterModule } from '@angular/router';
     `
       :host {
         display: block;
-        border: 1px solid orange;
-        background: coral;
+        border: 1px solid mediumseagreen;
+        background: mediumseagreen;
       }
     `,
   ],
