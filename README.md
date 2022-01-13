@@ -21,6 +21,8 @@ Focus on maximum inversion of control, level of abstraction and constraints.
 
 ### Folder Structure and Constraints
 
+![Dep Graph](./docs/abstract-dep-graph.png)
+
 ```
 dashboards/
     *domain/
@@ -64,12 +66,6 @@ dashboards/
         tokens/
 ```
 
-| Metric           | ⭐ Rating |
-|------------------|----------|
-| maintainability  | ⭐        |
-| DX               | ⭐        |
-| code complexity  | ⭐        |
-
 ## Simple Layered Architecture
 
 ### Design Decisions & Patterns
@@ -90,6 +86,8 @@ Comparison to **Extended Layered Architecture**
 ![Lib Layers](./docs/lib-layers.png)
 
 ### Folder Structure and Constraints
+
+![Dep Graph](./docs/simple-dep-graph.png)
 
 ```
 dashboards/
@@ -125,12 +123,6 @@ dashboards/
         patterns/
         tokens/
 ```
-
-| Metric           | ⭐ Rating |
-|------------------|----------|
-| maintainability  | ⭐        |
-| DX               | ⭐        |
-| code complexity  | ⭐        |
 
 ## Data Sharing and UI workflow Comparison
 
