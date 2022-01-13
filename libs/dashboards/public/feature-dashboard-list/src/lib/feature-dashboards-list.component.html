@@ -1,0 +1,12 @@
+<div class="container">
+  <h3>Dashboards List</h3>
+  <div *ngIf="action$ | async as action">
+    Action selected: <strong>{{action.type}}</strong>
+  </div>
+  <div class="dashboards-list">
+    <div *ngFor="let dashboard of dashboards$ | async" class="dashboard">
+      <a [routerLink]="['/dashboard']">{{ dashboard.name }}</a>
+      <button ds-button (click)="showDashboardSettings()">toggle menu</button>
+    </div>
+  </div>
+</div>

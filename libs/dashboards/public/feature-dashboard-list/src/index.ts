@@ -1,1 +1,1 @@
-export * from './lib/dashboards.component';
+export * from './lib/feature-dashboards-list.component';

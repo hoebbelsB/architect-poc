@@ -1,1 +1,1 @@
-export { FeatureDashboardViewModule } from './lib/dashboard-view.component';
+export { FeatureDashboardViewModule } from './lib/feature-dashboard-view.component';

@@ -25,8 +25,7 @@
           "apps/architect-poc/src/favicon.ico",
           "apps/architect-poc/src/assets"
         ],
-        "styles": ["apps/architect-poc/src/styles.scss", "libs/design-system/public/ui/src/lib/tokens/_variables.scss"],
-        "scripts": []
+        "styles": ["apps/architect-poc/src/styles.scss", "libs/design-system/public/ui/src/lib/tokens/_variables.scss"],        "scripts": []
       },
       "configurations": {
         "production": {

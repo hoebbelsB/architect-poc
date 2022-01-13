@@ -34,16 +34,16 @@ dashboards/
         dashboard.store.ts <-- domain // implements @ddd/dashboard/use-cases `DashboardFeatureState`
         dashboard-shared.store.ts <-- domain // implements @ddd/dashboard/data `DashboardSharedFeatureState`
       dashboard-shared.state.ts // `DashboardSharedFeatureState` abstract class defining shared feature-state
-      tokens.ts // define tokens for: `DashboardFeatureState`, `DashboardSharedFeatureState`, `DashboardAdapter`
+      tokens.ts // define tokens for: `DashboardFeatureState`, `DashboardSharedFeatureState`, `FeatureDashboardListAdapter`
       index.ts
     *use-cases/
       ports/
         data/
           dashboard-feature.state.ts // `DashboardFeatureState`
         ui/
-          dashboard.adapter.ts // `DashboardAdapter`
+          feature-dashboard-list.adapter.ts // `FeatureDashboardListAdapter`
       dashboard-use-case.ts <-- @ddd/settings/public/state
-        // implements @ddd/dashboard/use-cases `DashboardAdapter`
+        // implements @ddd/dashboard/use-cases `FeatureDashboardListAdapter`
     public/
         *state
           public-dashboard-state.module.ts // `forRoot` defining @ddd/dashboard/data tokens.ts
@@ -51,12 +51,12 @@ dashboards/
 
        *feature-list/
            list/
-               feature-list.component.ts <-- @ddd/dashboard/uses-cases (`DashboardAdapter`)
+               feature-list.component.ts <-- @ddd/dashboard/uses-cases (`FeatureDashboardListAdapter`)
            feature-list-module.ts
 
        *feature-show/
           show/
-            feature-show.component.ts <-- @ddd/dashboard/uses-cases (`DashboardAdapter`)
+            feature-show.component.ts <-- @ddd/dashboard/uses-cases (`FeatureDashboardListAdapter`)
           feature-show-module.ts
 
        *ui/

@@ -3,6 +3,7 @@ import { ChangeDetectionStrategy, Component, NgModule } from '@angular/core';
 @Component({
   selector: 'button[ds-button]',
   template: `<ng-content></ng-content>`,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [
     `
       :host {
@@ -12,9 +13,8 @@ import { ChangeDetectionStrategy, Component, NgModule } from '@angular/core';
         background-color: white;
         cursor: pointer;
       }
-    `,
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    `
+  ]
 })
 export class ButtonComponent {}
 
@@ -22,6 +22,6 @@ const exports = [ButtonComponent];
 
 @NgModule({
   declarations: exports,
-  exports,
+  exports
 })
 export class ButtonComponentModule {}

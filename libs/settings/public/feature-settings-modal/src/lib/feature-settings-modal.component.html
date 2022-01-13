@@ -1,0 +1,49 @@
+<div
+  class="modal-wrapper"
+  *ngIf="showMenu$ | async"
+>
+  <div
+    class="backdrop"
+    (click)="closeDialog()"
+  ></div>
+  <dialog
+    *ngIf="activeMenu$ | async as activeMenu"
+    class="dialog"
+    open
+  >
+    <!-- TODO: render actual menus, do we divide them into components? -->
+    <ng-container [ngSwitch]="activeMenu">
+      <div *ngSwitchCase="SettingsType.SPACES">
+        <h2>Spaces Settings</h2>
+      </div>
+      <div *ngSwitchCase="SettingsType.SIDEBAR">
+        <h2>Sidebar Settings</h2>
+      </div>
+      <div *ngSwitchCase="SettingsType.DASHBOARDS">
+        <h2>Dashboard Settings</h2>
+      </div>
+      <div *ngSwitchDefault>
+        <div><strong>Lol</strong></div>
+      </div>
+    </ng-container>
+    <div
+      class="settings-container"
+      [ngClass]="{
+    'spaces-settings': activeMenu === SettingsType.SPACES,
+    'sidebar-settings': activeMenu === SettingsType.SIDEBAR,
+    'dashboards-settings': activeMenu === SettingsType.DASHBOARDS
+    }"
+    >
+      <div
+        class="menu-items-container"
+        *ngFor="let menuItem of menuItems$ | async"
+      >
+        <ds-menu-item
+          class="menu-item"
+          (click)="triggerAction(menuItem.name)"
+          [menuItem]="menuItem"
+        ></ds-menu-item>
+      </div>
+    </div>
+  </dialog>
+</div>
