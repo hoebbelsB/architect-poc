@@ -3,16 +3,16 @@ import {
   SettingsSharedStore,
   SettingsType,
 } from '@architect-poc/settings-public-state';
-import { ActionType, Signal } from '@architect-poc/utils';
-import { filter, Observable } from 'rxjs';
+import { Signal } from '@architect-poc/utils';
+import { map, Observable } from 'rxjs';
 import { Space } from '@architect-poc/spaces/domain';
 import { SpacesResource } from '../resource/spaces.resource';
 
 @Injectable({ providedIn: 'root' })
 export class SpacesStore {
   // stream responsible for any action dispatched from the settings
-  readonly settingsActions$: Observable<Signal<ActionType>> = this.settingsStore.actions$.pipe(
-    filter(({type}) => type === ActionType.SPACES)
+  readonly settingsActions$: Observable<Signal<string> | null> = this.settingsStore.actions$.pipe(
+    map((action) => (action.payload === SettingsType.SPACES ? action : null))
   );
 
   constructor(

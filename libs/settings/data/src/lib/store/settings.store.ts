@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { SettingsState, SettingsType } from '@architect-poc/settings/domain';
-import { ActionType, Signal } from '@architect-poc/utils';
+import { Signal } from '@architect-poc/utils';
 import { BehaviorSubject, ReplaySubject, Subject, switchMap } from 'rxjs';
 import { SettingsResource } from '../resource/settings.resource';
 
@@ -11,7 +11,7 @@ export class SettingsStore {
     lastAction: '',
   };
 
-  readonly actions$ = new Subject<Signal<ActionType>>();
+  readonly actions$ = new Subject<Signal<string, SettingsType>>();
 
   private readonly _activeMenu$ = new ReplaySubject<Signal<SettingsType>>(1);
   private readonly _showMenu$ = new BehaviorSubject<boolean>(false);
@@ -27,8 +27,8 @@ export class SettingsStore {
     this.initialState
   );
 
-  writeAction(action: Signal<ActionType>): void {
-    if (action.type !== ActionType.CLOSE) {
+  writeAction(action: Signal<string, SettingsType>): void {
+    if (action.type !== 'Close dialog') {
       this.actions$.next(action);
     }
     this._showMenu$.next(false);

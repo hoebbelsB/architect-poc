@@ -4,14 +4,15 @@ import {
   SettingsSharedStore,
   SettingsType,
 } from '@architect-poc/settings-public-state';
-import { ActionType } from '@architect-poc/utils';
-import { concatMap, filter, Observable } from 'rxjs';
+import { concatMap, filter, map, Observable } from 'rxjs';
 import { DashboardResource } from '../resource/dashboard.resource';
 
 @Injectable({ providedIn: 'root' })
 export class DashboardsStore {
   readonly settingsActions$ = this.settingsStore.actions$.pipe(
-    filter(({type}) => type === ActionType.DASHBOARDS)
+    map((action) =>
+      action.payload === SettingsType.DASHBOARDS ? action : null
+    )
   );
   readonly dashboards$: Observable<DashboardModel[]> = this.dashboardResource.getDashboards();
 
@@ -20,7 +21,7 @@ export class DashboardsStore {
     private readonly dashboardResource: DashboardResource
   ) {
     this.settingsStore.actions$.pipe(
-      filter(action => action.type === ActionType.DASHBOARDS),
+      filter(action => action.payload === SettingsType.DASHBOARDS),
       concatMap((action) => this.dashboardResource.postDashboard(action.payload as any))
     ).subscribe();
   }

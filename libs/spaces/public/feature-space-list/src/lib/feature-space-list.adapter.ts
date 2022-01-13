@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { Signal } from '@architect-poc/utils';
+import { Observable } from 'rxjs';
 import { SpacesStore } from '@architect-poc/spaces/data';
 import { Space } from '@architect-poc/spaces/domain';
 
 @Injectable({ providedIn: 'root' })
 export class FeatureSpaceListAdapter {
-  readonly action$ = this.spacesStore.settingsActions$.pipe(map(({payload}) => (payload as any).name));
+  readonly action$: Observable<Signal<string> | null> = this.spacesStore.settingsActions$;
   constructor(private readonly spacesStore: SpacesStore) {}
 
   loadSpaces(): Observable<Space[]> {

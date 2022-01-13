@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ButtonComponentModule } from '@architect-poc/design-system/public/ui';
 import { FeatureDashboardListAdapter } from './feature-dashboard-list.adapter';
 
 @Component({
@@ -9,7 +10,7 @@ import { FeatureDashboardListAdapter } from './feature-dashboard-list.adapter';
   styles: [
     `
       .container {
-        background: mediumseagreen;
+        background: var(--dashboard-color);
       }
 
       .dashboards-list {
@@ -40,7 +41,7 @@ export class FeatureDashboardsListComponent {
 
 @NgModule({
   declarations: [FeatureDashboardsListComponent],
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, ButtonComponentModule],
   exports: [FeatureDashboardsListComponent],
 })
 export class FeatureDashboardListModule {}

@@ -7,12 +7,12 @@
     (click)="closeDialog()"
   ></div>
   <dialog
-    *ngIf="activeMenuType$ | async as activeMenuType"
+    *ngIf="activeMenu$ | async as activeMenu"
     class="dialog"
     open
   >
     <!-- TODO: render actual menus, do we divide them into components? -->
-    <ng-container [ngSwitch]="activeMenuType">
+    <ng-container [ngSwitch]="activeMenu">
       <div *ngSwitchCase="SettingsType.SPACES">
         <h2>Spaces Settings</h2>
       </div>
@@ -29,9 +29,9 @@
     <div
       class="settings-container"
       [ngClass]="{
-    'spaces-settings': activeMenuType === SettingsType.SPACES,
-    'sidebar-settings': activeMenuType === SettingsType.SIDEBAR,
-    'dashboards-settings': activeMenuType === SettingsType.DASHBOARDS
+    'spaces-settings': activeMenu === SettingsType.SPACES,
+    'sidebar-settings': activeMenu === SettingsType.SIDEBAR,
+    'dashboards-settings': activeMenu === SettingsType.DASHBOARDS
     }"
     >
       <div
@@ -40,7 +40,7 @@
       >
         <ds-menu-item
           class="menu-item"
-          (click)="triggerAction({type: activeMenuType, payload: {name: menuItem.name}})"
+          (click)="triggerAction(menuItem.name)"
           [menuItem]="menuItem"
         ></ds-menu-item>
       </div>

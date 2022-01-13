@@ -8,8 +8,8 @@ import { RouterModule } from '@angular/router';
     `
       :host {
         display: block;
-        border: 1px solid lightskyblue;
-        background: lightskyblue;
+        border: 1px solid var(--spaces-color);
+        background: var(--spaces-color);
       }
     `,
   ],

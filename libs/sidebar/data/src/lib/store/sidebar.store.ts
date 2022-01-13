@@ -3,17 +3,18 @@ import {
   SettingsSharedStore,
   SettingsType,
 } from '@architect-poc/settings-public-state';
-import { ActionType, Signal } from '@architect-poc/utils';
-import { filter, Observable } from 'rxjs';
+import { Signal } from '@architect-poc/utils';
+import { map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SidebarStore {
   // stream responsible for any action dispatched from the settings
-  readonly settingsActions$: Observable<Signal<ActionType>> =  this.settingsStore.actions$.pipe(
-    filter(({type}) => type === ActionType.SIDEBAR)
-  );
+  readonly settingsActions$: Observable<Signal<string> | null> =  this.settingsStore.actions$.pipe(
+    map((action) =>
+      action.payload === SettingsType.SIDEBAR ? action : null
+    )  );
   constructor(private readonly settingsStore: SettingsSharedStore) {
   }
 

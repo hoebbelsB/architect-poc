@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, NgModule } from '@angular/core';
 import { FeatureDashboardListModule } from '@architect-poc/dashboards-public-feature-dashboard-list';
+import { ButtonComponentModule } from '@architect-poc/design-system/public/ui';
 import { FeatureSpacesListModule } from '@architect-poc/spaces-public-feature-space-list';
 import { FeatureSidebarAdapter } from './feature-sidebar.adapter';
 
@@ -9,7 +10,7 @@ import { FeatureSidebarAdapter } from './feature-sidebar.adapter';
   styles: [
     `
       :host {
-        background: darkgoldenrod;
+        background: var(--sidebar-color);
       }
     `
   ],
@@ -30,6 +31,7 @@ export class FeatureSidebarComponent {
     FeatureDashboardListModule,
     FeatureSpacesListModule,
     CommonModule,
+    ButtonComponentModule,
   ],
   exports: [FeatureSidebarComponent],
   declarations: [FeatureSidebarComponent],

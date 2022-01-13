@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Component, NgModule } from '@angular/core';
 import { ButtonComponentModule, MenuItemComponentModule } from '@architect-poc/design-system/public/ui';
 import { SettingsType } from '@architect-poc/settings/domain';
-import { ActionType, Signal } from '@architect-poc/utils';
 import { map } from 'rxjs/operators';
 import { FeatureSettingsModalAdapter } from './feature-settings-modal.adapter';
 
@@ -24,19 +23,19 @@ import { FeatureSettingsModalAdapter } from './feature-settings-modal.adapter';
       }
 
       .spaces-settings {
-        background: lightskyblue;
+        background: var(--spaces-color);
       }
 
       .dashboards-settings {
-        background: mediumseagreen;
+        background: var(--dashboard-color);
       }
 
       .sidebar-settings {
-        background: darkgoldenrod;
+        background: var(--sidebar-color);
       }
 
       .dialog {
-        background: hotpink;
+        background: var(--settings-color);
         margin-top: 100px;
       }
 
@@ -53,18 +52,27 @@ import { FeatureSettingsModalAdapter } from './feature-settings-modal.adapter';
   ]
 })
 export class FeatureSettingsModalComponent {
-  readonly activeMenuType$ = this.featureSettingsModalAdapter.activeMenu$.pipe(map(({type}) => type));
+  readonly activeMenu$ = this.featureSettingsModalAdapter.activeMenu$.pipe(
+    map(({type}) => type)
+  );
   readonly showMenu$ = this.featureSettingsModalAdapter.showMenu$;
   readonly menuItems$ = this.featureSettingsModalAdapter.menuItems$;
   readonly SettingsType = SettingsType;
-  constructor(private readonly featureSettingsModalAdapter: FeatureSettingsModalAdapter) {}
+  private activeMenu: SettingsType | null = null;
 
-  triggerAction(action: Signal<SettingsType>): void {
-    this.featureSettingsModalAdapter.triggerAction({type: action.type as unknown as ActionType, payload: action.payload});
+  constructor(private readonly featureSettingsModalAdapter: FeatureSettingsModalAdapter) {
+    // FIXME
+    this.activeMenu$.subscribe((m) => {
+      this.activeMenu = m;
+    });
+  }
+
+  triggerAction(action: string): void {
+    this.featureSettingsModalAdapter.triggerAction(action, this.activeMenu as SettingsType);
   }
 
   closeDialog(): void {
-    this.featureSettingsModalAdapter.triggerAction({type: ActionType.CLOSE});
+    this.triggerAction('Close dialog');
   }
 }
 

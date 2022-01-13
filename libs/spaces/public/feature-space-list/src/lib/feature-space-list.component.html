@@ -1,10 +1,12 @@
 <div class="container">
   <h3>Spaces List</h3>
-  <div><strong>{{action$ | async}}</strong></div>
+  <div *ngIf="action$ | async as action">
+    Action selected: <strong>{{ action.type }}</strong>
+  </div>
   <div class="spaces-list">
     <div *ngFor="let space of spaces$ | async" class="space">
       <a [routerLink]="['/space']">{{ space.name }}</a>
-      <button (click)="showSpacesSettings()">toggle menu</button>
+      <button ds-button (click)="showSpacesSettings()">toggle menu</button>
     </div>
   </div>
 </div>

@@ -1,5 +1,7 @@
 <h2>Sidebar Component</h2>
-<div><strong>{{action$ | async}}</strong></div>
-<button (click)="showSettings()">Toggle sidebar settings</button>
+<div *ngIf="action$ | async as action">
+  Action selected:  <strong>{{action.type}}</strong>
+</div>
+<button ds-button (click)="showSettings()">Toggle sidebar settings</button>
 <architect-poc-spaces></architect-poc-spaces>
 <architect-poc-dashboards-list></architect-poc-dashboards-list>
