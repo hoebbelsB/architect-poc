@@ -22,5 +22,5 @@
       }
     }
   },
-  "tags": ["scope:public", "domain:settings-public", "type:state"]
+  "tags": ["domain:settings-public", "type:state"]
 }

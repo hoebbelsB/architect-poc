@@ -22,5 +22,5 @@
       }
     }
   },
-  "tags": ["scope:public", "domain:dashboards-public", "type:ui"]
+  "tags": ["domain:dashboards-public", "type:ui"]
 }
