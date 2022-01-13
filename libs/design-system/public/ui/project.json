@@ -22,5 +22,5 @@
       }
     }
   },
-  "tags": ["scope:shared"]
+  "tags": ["scope:public", "domain:public", "type:ui"]
 }
