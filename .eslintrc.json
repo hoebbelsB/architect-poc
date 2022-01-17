@@ -51,6 +51,7 @@
                 "onlyDependOnLibsWithTags": [
                   "type:feature",
                   "type:use-cases",
+                  "type:data",
                   "type:domain",
                   "type:ui",
                   "type:util"

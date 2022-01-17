@@ -59,6 +59,7 @@ function dddFeatureRules(domain) {
                 'type:feature',
                 'type:use-cases',
                 'type:domain',
+                'type:data',
                 'type:ui',
                 'type:util',
               ],
