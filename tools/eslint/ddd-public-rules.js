@@ -45,7 +45,7 @@ function dddFeatureRules(domain) {
         {
           enforceBuildableLibDependency: true,
           allow: [
-            `@architect-poc/${domain}/data`,
+            `@architect-poc/${domain}/use-cases`,
             `@architect-poc/${domain}/domain`,
           ],
           depConstraints: [

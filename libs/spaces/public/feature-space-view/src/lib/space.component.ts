@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-space',
+  selector: 'architect-poc-space',
   template: ` <h1>I'm a Space</h1> `,
   styles: [
     `

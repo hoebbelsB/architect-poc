@@ -5,14 +5,16 @@ import {
 } from '@architect-poc/settings-public-state';
 import { SidebarFeatureState } from '@architect-poc/sidebar/use-cases';
 import { Signal } from '@architect-poc/utils';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SidebarStore implements SidebarFeatureState {
   // stream responsible for any action dispatched from the settings
-  readonly settingsActions$: Observable<Signal<string>> =  this.settingsStore.actions$;
+  readonly action$: Observable<Signal<string> | null> =  this.settingsStore.actions$.pipe(
+    map((action) => (action.payload === SettingsType.SIDEBAR ? action : null))
+  );
   constructor(private readonly settingsStore: SettingsSharedFeatureState) {
   }
 

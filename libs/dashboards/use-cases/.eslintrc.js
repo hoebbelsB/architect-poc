@@ -1,7 +1,7 @@
 const { dddPrivateRules } = require('../../../tools/eslint/ddd-private.rules');
 
 module.exports = {
-  extends: ['../../../.eslintrc.js'],
+  extends: ['../../../.eslintrc.json'],
   ignorePatterns: ['!**/*'],
   overrides: [
     { ...dddPrivateRules('dashboards') },

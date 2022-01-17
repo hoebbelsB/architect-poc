@@ -1,7 +1,7 @@
 const { dddUiRules } = require('../../../../tools/eslint/ddd-public-rules');
 
 module.exports = {
-  extends: ['../../../../.eslintrc.js'],
+  extends: ['../../../../.eslintrc.json'],
   ignorePatterns: ['!**/*'],
   overrides: [
     { ...dddUiRules('spaces') },

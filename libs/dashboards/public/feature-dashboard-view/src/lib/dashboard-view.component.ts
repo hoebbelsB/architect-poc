@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'architect-poc-dashboard',
   template: ` <h1>I'm a Dashboard</h1> `,
   styles: [
     `
