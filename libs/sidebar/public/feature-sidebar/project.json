@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/sidebar/public/feature-sidebar",
+  "sourceRoot": "libs/sidebar/public/feature-sidebar/src",
+  "prefix": "architect-poc",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/sidebar/public/feature-sidebar"],
+      "options": {
+        "jestConfig": "libs/sidebar/public/feature-sidebar/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/sidebar/public/feature-sidebar/src/**/*.ts",
+          "libs/sidebar/public/feature-sidebar/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:public", "type:feature"]
+}

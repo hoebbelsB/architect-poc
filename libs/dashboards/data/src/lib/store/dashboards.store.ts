@@ -5,11 +5,18 @@ import {
   SettingsSharedFeatureState,
   SettingsType,
 } from '@architect-poc/settings-public-state';
-import { concatMap, filter, Observable } from 'rxjs';
+import { Signal } from '@architect-poc/utils';
+import { concatMap, filter, map, Observable } from 'rxjs';
 import { DashboardResource } from '../resource/dashboard.resource';
 
 @Injectable({ providedIn: 'root' })
 export class DashboardsStore implements DashboardFeatureState {
+  readonly action$: Observable<Signal<string> | null> =
+    this.settingsState.actions$.pipe(
+      map((action) =>
+        action.payload === SettingsType.DASHBOARDS ? action : null
+      )
+    );
   constructor(
     private readonly settingsState: SettingsSharedFeatureState,
     private readonly dashboardResource: DashboardResource
