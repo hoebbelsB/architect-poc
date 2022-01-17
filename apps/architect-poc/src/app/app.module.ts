@@ -6,7 +6,7 @@ import { DashboardsPublicStateModule } from '@architect-poc/dashboards-public-st
 import { FeatureSettingsModalModule } from '@architect-poc/settings-public-feature-settings-modal';
 import { SettingsPublicStateModule } from '@architect-poc/settings-public-state';
 import { SidebarPublicStateModule } from '@architect-poc/sidebar-public-state';
-import { FeatureSidebarModule } from '@architect-poc/sidebar-public-feaure-sidebar';
+import { FeatureSidebarModule } from '@architect-poc/sidebar-public-feature-sidebar';
 import { SpacesPublicStateModule } from '@architect-poc/spaces-public-state';
 
 import { AppComponent } from './app.component';
@@ -36,7 +36,7 @@ import { AppComponent } from './app.component';
       {
         path: 'space',
         loadChildren: () =>
-          import('@architect-poc/spaces-public-feaure-space-view').then(
+          import('@architect-poc/spaces-public-feature-space-view').then(
             (m) => m.FeatureSpaceListModule
           ),
       },

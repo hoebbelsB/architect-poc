@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/spaces/public/feature-space-list",
+  "sourceRoot": "libs/spaces/public/feature-space-list/src",
+  "prefix": "architect-poc",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/spaces/public/feature-space-list"],
+      "options": {
+        "jestConfig": "libs/spaces/public/feature-space-list/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/spaces/public/feature-space-list/src/**/*.ts",
+          "libs/spaces/public/feature-space-list/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:public", "type:feature"]
+}
